@@ -349,10 +349,10 @@ book-zp-contents =
     Врач -- 1.1
     
     Инженер -- 1.1
-
-# WL-change-psych-start
+    
+    # WL-change-psych-start
     Психотерапевт -- 1.1
-# WL-change-psych-end
+    # WL-change-psych-end
     
     
     Химик -- 1.2
