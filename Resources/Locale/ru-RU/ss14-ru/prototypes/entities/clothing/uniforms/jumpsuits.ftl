@@ -150,8 +150,10 @@ ent-ClothingUniformJumpsuitAtmos = комбинезон атмосферного
     .desc = Я на работе. Я не могу бросить работу. Работа — это дыхание. Я проверяю качество воздуха.
 ent-ClothingUniformJumpsuitAtmosCasual = повседневный комбинезон атмосферного техника
     .desc = С такой простой работой, как у вас, можно и расслабиться.
-ent-ClothingUniformJumpsuitPsychologist = костюм психолога
+# WL-change-psych-start
+ent-ClothingUniformJumpsuitPsychologist = костюм Психотерапевта
     .desc = Я не теряю вещи. Я кладу вещи в места, которые потом ускользают от меня.
+# WL-change-psych-end
 ent-ClothingUniformJumpsuitReporter = костюм репортёра
     .desc = Хороший репортёр остаётся скептиком всю свою жизнь.
 ent-ClothingUniformJumpsuitSafari = костюм для сафари

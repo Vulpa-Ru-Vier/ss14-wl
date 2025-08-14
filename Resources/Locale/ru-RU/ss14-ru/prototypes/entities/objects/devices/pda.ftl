@@ -127,8 +127,10 @@ ent-ERTSecurityPDA = КПК офицера безопасности ОБР
     .desc = Красный значит мощный. На боку нацарапаны метки подсчёта.
 ent-CBURNPDA = КПК РХБЗЗ
     .desc = Пахнет гнилой плотью.
-ent-PsychologistPDA = КПК психолога
+# WL-change-psych-start
+ent-PsychologistPDA = КПК психотерапевта
     .desc = Выглядит безупречно чистым.
+# WL-change-psych-end
 ent-ReporterPDA = КПК репортёра
     .desc = Пахнет свежеотпечатанной газетой.
 ent-ZookeeperPDA = КПК зоотехника
