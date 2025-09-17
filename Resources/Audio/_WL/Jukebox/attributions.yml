@@ -1,29 +1,34 @@
 - files: ["lysoxygen.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "mrjajkes"
-  source: "Discord"
+  source: "https://youtube.com/@mrjajkes"
 
 - files: ["Motive-A-Guy.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "A-Guy"
-  source: "Discord"
+  source: "https://www.youtube.com/@a-guy173/featured"
 
 - files: ["Nothing-danger-with-megacorps-A-Guy.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "A-Guy"
-  source: "Discord"
+  source: "https://www.youtube.com/@a-guy173/featured"
 
 - files: ["Nuclear-operation-remake-A-Guy.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "A-Guy"
-  source: "Discord"
+  source: "https://www.youtube.com/@a-guy173/featured"
 
 - files: ["Radify-A-Guy.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "A-Guy"
-  source: "Discord"
+  source: "https://www.youtube.com/@a-guy173/featured"
 
 - files: ["Tech-Fairy-A-Guy.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "A-Guy"
-  source: "Discord"
+  source: "https://www.youtube.com/@a-guy173/featured"
+
+- files: ["RevolutionSS13.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "A-Guy"
+  source: "https://www.youtube.com/@a-guy173/featured"
