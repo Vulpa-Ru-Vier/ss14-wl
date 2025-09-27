@@ -6,6 +6,7 @@ using Content.Shared.Speech;
 using Content.Shared.IdentityManagement;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._WL.Languages;
 
@@ -13,7 +14,56 @@ public sealed class LanguagesSystem : SharedLanguagesSystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ILogManager _logMan = default!;
-    public const string SawmillName = "languages.sys";
+    [Dependency] private readonly IEntityManager _ent = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<LanguagesSpeekingComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<LanguagesSpeekingComponent, ComponentInit>(OnComponentInit);
+        SubscribeNetworkEvent<LanguageChangeEvent>(OnGlobalLanguageChange);
+    }
+
+    public void OnMapInit(EntityUid ent, LanguagesSpeekingComponent component, ref MapInitEvent args)
+    {
+        var langs = component.SpeekingLanguages;
+        if (langs.Count == 0)
+            return;
+        foreach (ProtoId<LanguagePrototype> protoid in langs)
+        {
+            var proto = GetLanguagePrototype(protoid);
+            if (proto != null)
+            {
+                if (TryChangeLanguage(_ent.GetNetEntity(ent), protoid))
+                    return;
+            }
+        }
+    }
+
+    public void OnComponentInit(EntityUid ent, LanguagesSpeekingComponent component, ref ComponentInit args)
+    {
+        var langs = component.SpeekingLanguages;
+        if (langs.Count == 0)
+            return;
+        foreach (ProtoId<LanguagePrototype> protoid in langs)
+        {
+            var proto = GetLanguagePrototype(protoid);
+            if (proto != null)
+            {
+                if (TryChangeLanguage(_ent.GetNetEntity(ent), protoid))
+                    return;
+            }
+        }
+    }
+
+    public void OnGlobalLanguageChange(LanguageChangeEvent msg, EntitySessionEventArgs args)
+    {
+        var entity = _ent.GetEntity(msg.Entity);
+        if (!TryComp<LanguagesSpeekingComponent>(entity, out var component))
+            return;
+        OnLanguageChange(entity, (string)msg.Language);
+    }
 
     public string GetHeardMessage(string message, EntityUid source, EntityUid listener)
     {

@@ -1,4 +1,5 @@
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._WL.Languages;
 
@@ -13,6 +14,9 @@ public sealed partial class LanguagePrototype : IPrototype
 
     [DataField(required: true)]
     public string Description = string.Empty;
+
+    [DataField("icon")]
+    public SpriteSpecifier Icon = new SpriteSpecifier.Texture(new ("/Textures/_WL/Interface/Languages/languages.rsi/default.png"));
 
     [DataField(required: true)]
     public ObfuscationMethod Obfuscation = ObfuscationMethod.Default;
