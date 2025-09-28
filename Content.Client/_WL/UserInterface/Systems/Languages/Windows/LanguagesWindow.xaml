@@ -3,8 +3,8 @@
     xmlns:cc="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:windows="clr-namespace:Content.Client._WL.UserInterface.Systems.Languages.Windows"
     Title="Languages window (LOC)"
-    MinWidth="500"
-    MinHeight="545">
+    MinWidth="530"
+    MinHeight="345">
     <ScrollContainer>
         <BoxContainer Orientation="Vertical">
             <BoxContainer Orientation="Vertical" VerticalAlignment="Top">
@@ -12,7 +12,7 @@
                 <Label Name="SubText" VerticalAlignment="Top" StyleClasses="LabelSubText" Access="Public"/>
             </BoxContainer>
             <BoxContainer Orientation="Vertical" Name="Languages" Access="Public"/>
-            <cc:Placeholder Name="RolePlaceholder" Access="Public" PlaceholderText="{Loc 'character-info-roles-antagonist-text'}"/>
+            <cc:Placeholder Name="RolePlaceholder" Access="Public" PlaceholderText="{Loc 'ui-languages-placeholder'}"/>
         </BoxContainer>
     </ScrollContainer>
 </windows:LanguagesWindow>

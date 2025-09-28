@@ -1,4 +1,4 @@
 - type: traitCategory
   id: Languages
   name: Languages
-  maxTraitPoints: 2
+  maxTraitPoints: 1000000000

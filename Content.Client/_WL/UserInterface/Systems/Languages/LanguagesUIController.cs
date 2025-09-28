@@ -146,7 +146,7 @@ public sealed class LanguagesUIController : UIController, IOnStateEntered<Gamepl
 
         _window.Languages.RemoveAllChildren();
 
-        List<string> groups = new List<string>() { "Speeking languages" };
+        List<string> groups = new List<string>() { Loc.GetString("ui-languages-knowed-languages") };
 
         var isPlace = true;
 
@@ -182,20 +182,16 @@ public sealed class LanguagesUIController : UIController, IOnStateEntered<Gamepl
                 languageItemControl.Icon.Texture = _sprite.Frame0(language.Icon);
                 var titleMessage = new FormattedMessage();
                 var descriptionMessage = new FormattedMessage();
-                titleMessage.AddText(language.Name);
-                descriptionMessage.AddText(language.Description);
+                titleMessage.AddText(Loc.GetString(language.Name));
+                descriptionMessage.AddText(Loc.GetString(language.Description));
 
                 languageItemControl.Title.SetMessage(titleMessage);
                 languageItemControl.Description.SetMessage(descriptionMessage);
 
-                Logger.Debug("PRESS CHACHK");
                 if (current == (string)protoid)
                 {
                     languageItemControl.ChooseButton.Pressed = true;
-                    Logger.Debug("PRESS CHACHK SUCCESS");
                 }
-                Logger.Debug(current);
-                Logger.Debug((string)protoid);
                 languageControl.AddChild(languageItemControl);
                 isPlace = false;
             }
@@ -227,13 +223,11 @@ public sealed class LanguagesUIController : UIController, IOnStateEntered<Gamepl
 
     private void OnLanguageChanged(AfterLanguageChangeEvent ev, EntitySessionEventArgs _)
     {
-        Logger.Debug("EVENT DETeCTO");
         UpdateLanguages();
     }
 
     private void OnMindRoleChanged(MindRoleTypeChangedEvent ev, EntitySessionEventArgs _)
     {
-        Logger.Debug("EVENT DETeCTO ROLETTO");
         UpdateLanguages();
     }
 
@@ -255,18 +249,15 @@ public sealed class LanguagesUIController : UIController, IOnStateEntered<Gamepl
         var data = new LanguagesData(entt, comp.CurrentLanguage, comp.SpeekingLanguages, comp.UnderstandingLanguages);
 
         LanguagesUpdated(data);
-        Logger.Debug("UPEDATO DETeCTO");
     }
 
     public void LanguageChange(ProtoId<LanguagePrototype> language)
     {
-        Logger.Debug("LanguageChange");
         if (!_player.LocalEntity.HasValue)
             return;
         if (!_ent.TryGetNetEntity(_player.LocalEntity.Value, out var netEntity))
             return;
-        if (_languages.TryChangeLanguage(netEntity.Value, language))
-            Logger.Debug("SUCCESO CHANGES");
+        _languages.TryChangeLanguage(netEntity.Value, language);
     }
 
     private void LanguagesDetached(EntityUid uid)

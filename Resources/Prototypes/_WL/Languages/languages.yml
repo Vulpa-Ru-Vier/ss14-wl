@@ -1,0 +1,127 @@
+- type: language
+  id: BaseLang
+  name: Base language
+  description: Base language description.
+  abstract: true
+  obfuscation:
+    !type:ReplacementObfuscation
+      replacement:
+      - base
+  icon:
+    sprite: /Textures/_WL/Interface/Languages/languages.rsi
+    state: default
+
+- type: language
+  id: UnatiLang
+  name: language-unati-lang
+  description: language-unati-lang-desc
+  obfuscation:
+    !type:ByCharReplacementObfuscation
+      replacement:
+      - Assshi
+      - wssshi
+  icon:
+    sprite: /Textures/_WL/Interface/Languages/languages.rsi
+    state: unati
+
+- type: language
+  id: SarengLang
+  name: language-sareng-lang
+  description: language-sareng-lang-desc
+  obfuscation:
+    !type:Utf16ReplacementObfuscation
+      utf16start: 192
+      utf16end: 591
+  icon:
+    sprite: /Textures/_WL/Interface/Languages/languages.rsi
+    state: sareng
+
+- type: language
+  id: NianLang
+  name: Placeholder
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius, quam sed ornare luctus, nulla tortor tincidunt orci, quis rutrum augue lacus ut augue. Etiam a sollicitudin libero.
+  obfuscation:
+    !type:EmoteObfuscation
+      replacement:
+      - пищит
+      - пищит длинно
+      - пищит оч длинно
+  icon:
+    sprite: /Textures/_WL/Interface/Languages/languages.rsi
+    state: nian
+
+- type: language
+  id: GolemLang
+  name: Placeholder
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius, quam sed ornare luctus, nulla tortor tincidunt orci, quis rutrum augue lacus ut augue. Etiam a sollicitudin libero.
+  obfuscation:
+    !type:ReplacementObfuscation
+      replacement:
+      - BOUGTH
+  icon:
+    sprite: /Textures/_WL/Interface/Languages/languages.rsi
+    state: golem
+
+- type: language
+  id: CishiLang
+  name: Placeholder
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius, quam sed ornare luctus, nulla tortor tincidunt orci, quis rutrum augue lacus ut augue. Etiam a sollicitudin libero.
+  obfuscation:
+    !type:ByCharReplacementObfuscation
+      replacement:
+      - a
+  icon:
+    sprite: /Textures/_WL/Interface/Languages/languages.rsi
+    state: cischi
+
+- type: language
+  id: FeliLang
+  name: Placeholder
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius, quam sed ornare luctus, nulla tortor tincidunt orci, quis rutrum augue lacus ut augue. Etiam a sollicitudin libero.
+  obfuscation:
+    !type:ByCharReplacementObfuscation
+      replacement:
+      - a
+  icon:
+    sprite: /Textures/_WL/Interface/Languages/languages.rsi
+    state: felinid
+
+- type: language
+  id: DionaLang
+  name: Placeholder
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius, quam sed ornare luctus, nulla tortor tincidunt orci, quis rutrum augue lacus ut augue. Etiam a sollicitudin libero.
+  obfuscation:
+    !type:ByCharReplacementObfuscation
+      replacement:
+      - a
+  icon:
+    sprite: /Textures/_WL/Interface/Languages/languages.rsi
+    state: diona
+
+- type: entity
+  parent: MobDebugRandomCounter
+  id: MobDebugCounterLanguageSmart
+  name: emote langu
+  description: He can count
+  suffix: DEBUG, SMART
+  components:
+    - type: LanguagesSpeeking
+      currentLanguage: UnatiLang
+      understandingLanguages:
+        - BaseLang
+        - UnatiLang
+        - FeliLang
+        - NianLang
+        - GolemLang
+        - SarengLang
+        - DionaLang
+        - MurineLang
+      speekingLanguages:
+        - BaseLang
+        - UnatiLang
+        - FeliLang
+        - NianLang
+        - GolemLang
+        - SarengLang
+        - DionaLang
+        - MurineLang

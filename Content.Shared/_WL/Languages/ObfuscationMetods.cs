@@ -239,9 +239,9 @@ public partial class EmoteObfuscation : ObfuscationMethod
 
     internal override void Obfuscate(StringBuilder builder, string message, int global_seed)
     {
-        var gap = max - min;
-        var index = (int)((message.Length - min) / gap * Replacement.Count);
-        index = System.Math.Min(0, System.Math.Max(index, Replacement.Count - 1));
+        double gap = max - min;
+        int index = (int)System.Math.Round((message.Length - min) / gap * Replacement.Count);
+        index = System.Math.Max(0, System.Math.Min(index, Replacement.Count - 1));
         builder.Append(Replacement[index]);
     }
 

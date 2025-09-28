@@ -9,5 +9,5 @@
         <RichTextLabel Name="Title" Access="Public" HorizontalAlignment="Center"/>
         <RichTextLabel Name="Description" Access="Public" HorizontalAlignment="Left"/>
     </BoxContainer>
-    <Button Name="ChooseButton" Text="Choose" Access="Public" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+    <Button Name="ChooseButton" Text="{Loc 'ui-languages-choose-button'}" Access="Public" HorizontalAlignment="Right" VerticalAlignment="Top"/>
 </controls:LanguageItemControl>
