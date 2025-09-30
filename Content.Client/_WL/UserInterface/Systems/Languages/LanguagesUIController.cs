@@ -142,6 +142,8 @@ public sealed class LanguagesUIController : UIController, IOnStateEntered<Gamepl
 
         var (entity, current, speeking, understanding) = data;
 
+        if (_player.LocalEntity != entity)
+            return;
         //UpdateRoleType();
 
         _window.Languages.RemoveAllChildren();

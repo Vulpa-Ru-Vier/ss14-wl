@@ -742,8 +742,12 @@ public sealed partial class ChatSystem : SharedChatSystem
         {
             //WL-Changes: Languages start
             if (session.AttachedEntity is not { Valid: true } playerEntity)
+            {
                 continue;
+                Logger.Debug("enty err");
+            }
             EntityUid listener = session.AttachedEntity.Value;
+            Logger.Debug(listener.Id.ToString());
             var entRange = MessageRangeCheck(session, data, range);
             if (!_languages.CanUnderstand(source, listener))
             {
