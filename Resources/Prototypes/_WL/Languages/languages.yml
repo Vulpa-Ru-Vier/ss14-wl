@@ -12,20 +12,132 @@
     state: default
 
 - type: language
-  id: UnatiLang
-  name: language-unati-lang
-  description: language-unati-lang-desc
+  id: Translate
+  name: language-translate
+  description: language-translate-desc
+  obfuscation:
+    !type:WordsReplacementObfuscation
+      replacement:
+        - Lorem
+        - ipsum
+        - dolor
+        - sit
+        - amet
+        - consectetur
+        - adipisci
+        - elit
+        - sed
+        - eiusmod
+        - tempor
+        - incidunt
+        - ut
+        - labore
+        - et
+        - dolore
+        - magna
+        - aliqua
+        - Ut
+        - enim
+        - ad
+        - minim
+        - veniam
+        - quis
+        - nostru
+        - exercitatione
+        - ulla
+        - corpori
+        - suscipi
+        - laboriosa
+        - nisi
+        - ut
+        - aliquid
+        - ex
+        - ea
+        - commodi
+        - consequatur
+        - Quis
+        - aute
+        - iure
+        - reprehenderit
+        - in
+        - voluptate
+        - velit
+        - esse
+        - cillu
+        - dolore
+        - e
+        - fugia
+        - nulla
+        - pariatu
+        - Excepteur
+        - sin
+        - obcaeca
+        - cupidita
+        - no
+        - proiden
+        - sunt
+        - in
+        - culpa
+        - qui
+        - officia
+        - deserunt
+        - mollit
+        - anim
+        - id
+        - est
+        - laborum
+  icon:
+    sprite: /Textures/_WL/Interface/Languages/languages.rsi
+    state: translate
+
+- type: language
+  id: SintaUnati
+  name: language-unati
+  description: language-unati-desc
   obfuscation:
     !type:ByCharReplacementObfuscation
       replacement:
-      - Assshi
-      - wssshi
+      - w
+      - s
+      - h
+      - sh
+      - kh
+      - a
+      - i
+      - as
+      - hi
+      - es
+      - ws
+      - eh
+      - he
+      - w
+      - e
+      - ss
+      - hh
+      - f
+      - ef
+      - u
+      - as
+      - a
+      - weh
   icon:
     sprite: /Textures/_WL/Interface/Languages/languages.rsi
     state: unati
 
 - type: language
-  id: SarengLang
+  id: OldEarth
+  name: language-oldearth
+  description: language-oldearth-desc
+  obfuscation:
+    !type:Utf16ReplacementObfuscation
+      utf16start: 192
+      utf16end: 591
+  icon:
+    sprite: /Textures/_WL/Interface/Languages/languages.rsi
+    state: sareng
+
+- type: language
+  id: Sarengis
   name: language-sareng-lang
   description: language-sareng-lang-desc
   obfuscation:
@@ -37,63 +149,44 @@
     state: sareng
 
 - type: language
-  id: NianLang
-  name: Placeholder
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius, quam sed ornare luctus, nulla tortor tincidunt orci, quis rutrum augue lacus ut augue. Etiam a sollicitudin libero.
+  id: Weaver
+  name: language-weaver
+  description: language-weaver-desc
   obfuscation:
     !type:EmoteObfuscation
       replacement:
       - пищит
-      - пищит длинно
-      - пищит оч длинно
+      - щебечет
+      - щебечет и двигает усиками
+      - щебечет и активно твигает тельцем
   icon:
     sprite: /Textures/_WL/Interface/Languages/languages.rsi
     state: nian
 
 - type: language
-  id: GolemLang
-  name: Placeholder
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius, quam sed ornare luctus, nulla tortor tincidunt orci, quis rutrum augue lacus ut augue. Etiam a sollicitudin libero.
-  obfuscation:
-    !type:ReplacementObfuscation
-      replacement:
-      - BOUGTH
-  icon:
-    sprite: /Textures/_WL/Interface/Languages/languages.rsi
-    state: golem
-
-- type: language
-  id: CishiLang
-  name: Placeholder
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius, quam sed ornare luctus, nulla tortor tincidunt orci, quis rutrum augue lacus ut augue. Etiam a sollicitudin libero.
+  id: Ternary
+  name: language-ternary
+  description: language-ternary-desc
   obfuscation:
     !type:ByCharReplacementObfuscation
       replacement:
-      - a
+      - 0
+      - 1
+      - 2
   icon:
     sprite: /Textures/_WL/Interface/Languages/languages.rsi
-    state: cischi
+    state: android
 
 - type: language
-  id: FeliLang
-  name: Placeholder
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius, quam sed ornare luctus, nulla tortor tincidunt orci, quis rutrum augue lacus ut augue. Etiam a sollicitudin libero.
+  id: RootSpeak
+  name: language-rootspeak
+  description: language-rootspeak-desc
   obfuscation:
-    !type:ByCharReplacementObfuscation
+    !type:EmoteObfuscation
       replacement:
-      - a
-  icon:
-    sprite: /Textures/_WL/Interface/Languages/languages.rsi
-    state: felinid
-
-- type: language
-  id: DionaLang
-  name: Placeholder
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius, quam sed ornare luctus, nulla tortor tincidunt orci, quis rutrum augue lacus ut augue. Etiam a sollicitudin libero.
-  obfuscation:
-    !type:ByCharReplacementObfuscation
-      replacement:
-      - a
+      - шуршит
+      - трещит ветками
+      - трясёт лозами и листьями
   icon:
     sprite: /Textures/_WL/Interface/Languages/languages.rsi
     state: diona
@@ -101,27 +194,23 @@
 - type: entity
   parent: MobDebugRandomCounter
   id: MobDebugCounterLanguageSmart
-  name: emote langu
-  description: He can count
-  suffix: DEBUG, SMART
+  name: language tester
+  description: He can language
+  suffix: DEBUG, LANG
   components:
     - type: LanguagesSpeeking
-      currentLanguage: UnatiLang
+      currentLanguage: Translate
       understandingLanguages:
-        - BaseLang
-        - UnatiLang
-        - FeliLang
-        - NianLang
-        - GolemLang
-        - SarengLang
-        - DionaLang
-        - MurineLang
+        - Translate
+        - SintaUnati
+        - Sarengis
+        - Weaver
+        - Ternary
+        - RootSpeak
       speekingLanguages:
-        - BaseLang
-        - UnatiLang
-        - FeliLang
-        - NianLang
-        - GolemLang
-        - SarengLang
-        - DionaLang
-        - MurineLang
+        - Translate
+        - SintaUnati
+        - Sarengis
+        - Weaver
+        - Ternary
+        - RootSpeak
