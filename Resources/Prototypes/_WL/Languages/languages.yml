@@ -233,7 +233,7 @@
         - кр
   icon:
     sprite: /Textures/_WL/Interface/Languages/languages.rsi
-    state: Vox
+    state: vox
 
 
 - type: entity

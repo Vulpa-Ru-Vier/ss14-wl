@@ -200,25 +200,7 @@ public sealed class LanguagesUIController : UIController, IOnStateEntered<Gamepl
 
             _window.Languages.AddChild(languageControl);
         }
-        /*
 
-        if (briefing != null)
-        {
-            var briefingControl = new ObjectiveBriefingControl();
-            var text = new FormattedMessage();
-            text.PushColor(Color.Yellow);
-            text.AddText(briefing);
-            briefingControl.Label.SetMessage(text);
-            _window.Objectives.AddChild(briefingControl);
-        }
-
-        var controls = _characterInfo.GetCharacterInfoControls(entity);
-        foreach (var control in controls)
-        {
-            _window.Objectives.AddChild(control);
-        }
-
-        */
         _window.RolePlaceholder.Visible = isPlace;
     }
 

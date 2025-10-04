@@ -746,10 +746,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (session.AttachedEntity is not { Valid: true } playerEntity)
             {
                 continue;
-                Logger.Debug("enty err");
             }
             EntityUid listener = session.AttachedEntity.Value;
-            Logger.Debug(listener.Id.ToString());
             var entRange = MessageRangeCheck(session, data, range);
             var afterWrappedMessage = wrappedMessage;
             var afterChannel = channel;
