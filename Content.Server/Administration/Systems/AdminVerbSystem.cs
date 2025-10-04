@@ -1,5 +1,7 @@
-using Content.Server._WL.Languages; //WL-Changes: Languages
-using Content.Shared._WL.Languages.Components; //WL-Changes: Languages
+// WL-Changes: Languages start
+using Content.Server._WL.Languages;
+using Content.Shared._WL.Languages.Components;
+// WL-Changes: Languages end
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.UI;
@@ -654,7 +656,7 @@ namespace Content.Server.Administration.Systems
                 };
                 args.Verbs.Add(verb);
             }
-            // WL-Changes: Languages start
+            // WL-Changes: Languages end
         }
 
         #region SolutionsEui

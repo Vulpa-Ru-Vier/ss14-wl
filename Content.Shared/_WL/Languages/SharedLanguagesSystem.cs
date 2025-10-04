@@ -1,5 +1,4 @@
 using Content.Shared._WL.Languages.Components;
-using Content.Shared._WL.Languages.Components;
 using Content.Shared.GameTicking;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -40,18 +39,15 @@ public abstract class SharedLanguagesSystem : EntitySystem
 
         if (!TryComp<LanguagesComponent>(ent, out var comp))
             return false;
-        Logger.Debug("TryChangeLanguage");
         if (!comp.Understood.Contains(protoid))
             return false;
 
         var ev = new LanguageChangeEvent(netEnt, protoid);
         RaiseNetworkEvent(ev);
         RaiseLocalEvent(ent.Value, ev);
-        Logger.Debug("Ev 1");
 
         var ev2 = new LanguagesInfoEvent(netEnt, (string)protoid, comp.Speaking, comp.Understood);
         RaiseNetworkEvent(ev2);
-        Logger.Debug("Ev 2");
 
         return true;
     }
