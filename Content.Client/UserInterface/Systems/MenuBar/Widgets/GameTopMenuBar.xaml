@@ -111,7 +111,7 @@
     <ui:MenuButton
         Name="LanguagesButton"
         Access="Internal"
-        Icon="{xe:Tex '/Textures/Interface/info.svg.192dpi.png'}"
+        Icon="{xe:Tex '/Textures/_WL/Interface/Languages/languages_svglogo.png'}"
         BoundKey = "{x:Static is:ContentKeyFunctions.LanguageChoose}"
         ToolTip="{Loc 'ui-languages-menu-button-tip'}"
         MinSize="48 64"
