@@ -24,3 +24,20 @@ public sealed partial class LanguageChangeEvent : EntityEventArgs
 public sealed partial class AfterLanguageChangeEvent : SimpleDoAfterEvent
 {
 }
+
+[Serializable, NetSerializable]
+public sealed partial class LanguagesSyncEvent : EntityEventArgs
+{
+    public NetEntity Entity { get; }
+
+    public List<ProtoId<LanguagePrototype>> Speaking { get; }
+
+    public List<ProtoId<LanguagePrototype>> Understood { get; }
+
+    public LanguagesSyncEvent(NetEntity entity, List<ProtoId<LanguagePrototype>> speaking, List<ProtoId<LanguagePrototype>> understood)
+    {
+        Entity = entity;
+        Speaking = speaking;
+        Understood = understood;
+    }
+}

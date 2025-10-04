@@ -170,7 +170,7 @@
       - пищит
       - щебечет
       - щебечет и двигает усиками
-      - щебечет и активно твигает тельцем
+      - щебечет и активно двигает тельцем
   icon:
     sprite: /Textures/_WL/Interface/Languages/languages.rsi
     state: nian

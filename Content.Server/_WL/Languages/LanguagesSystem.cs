@@ -13,7 +13,6 @@ namespace Content.Server._WL.Languages;
 public sealed class LanguagesSystem : SharedLanguagesSystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ILogManager _logMan = default!;
     [Dependency] private readonly IEntityManager _ent = default!;
 
     public override void Initialize()
@@ -22,7 +21,10 @@ public sealed class LanguagesSystem : SharedLanguagesSystem
 
         SubscribeLocalEvent<LanguagesComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<LanguagesComponent, ComponentInit>(OnComponentInit);
+        SubscribeLocalEvent<AddLanguagesComponent, ComponentInit>(OnAddInit);
+
         SubscribeNetworkEvent<LanguageChangeEvent>(OnGlobalLanguageChange);
+        SubscribeNetworkEvent<LanguagesSyncEvent>(OnLanguagesSync);
     }
 
     public void OnMapInit(EntityUid ent, LanguagesComponent component, ref MapInitEvent args)
@@ -41,6 +43,47 @@ public sealed class LanguagesSystem : SharedLanguagesSystem
         }
     }
 
+    public void AddLanguage(EntityUid ent, string language)
+    {
+        if (!TryComp<LanguagesComponent>(ent, out var comp))
+            return;
+        comp.Speaking.Add(language);
+        comp.Understood.Add(language);
+        Dirty(ent, comp);
+
+        var net_ent = GetNetEntity(ent);
+        SyncLanguages(net_ent, comp);
+    }
+
+    public void OnAddInit(EntityUid ent, AddLanguagesComponent component, ref ComponentInit args)
+    {
+        var langs = component.Languages;
+        if (langs.Count == 0 || !TryComp<LanguagesComponent>(ent, out var out_comp))
+        {
+            RemComp<AddLanguagesComponent>(ent);
+            return;
+        }
+
+        foreach (ProtoId<LanguagePrototype> protoid in langs)
+        {
+            var proto = GetLanguagePrototype(protoid);
+            if (proto != null)
+            {
+                if (component.ToSpeaking)
+                    out_comp.Speaking.Add(protoid);
+
+                if (component.ToUnderstood)
+                    out_comp.Understood.Add(protoid);
+            }
+        }
+        RemComp<AddLanguagesComponent>(ent);
+
+        Dirty(ent, out_comp);
+
+        var net_ent = GetNetEntity(ent);
+        SyncLanguages(net_ent, out_comp);
+    }
+
     public void OnComponentInit(EntityUid ent, LanguagesComponent component, ref ComponentInit args)
     {
         var langs = component.Speaking;
@@ -55,6 +98,18 @@ public sealed class LanguagesSystem : SharedLanguagesSystem
                     return;
             }
         }
+    }
+
+    public void OnLanguagesSync(LanguagesSyncEvent msg, EntitySessionEventArgs args)
+    {
+        var entity = _ent.GetEntity(msg.Entity);
+        if (!TryComp<LanguagesComponent>(entity, out var component))
+            return;
+
+        component.Speaking = msg.Speaking;
+        component.Understood = msg.Understood;
+
+        Dirty(entity, component);
     }
 
     public void OnGlobalLanguageChange(LanguageChangeEvent msg, EntitySessionEventArgs args)

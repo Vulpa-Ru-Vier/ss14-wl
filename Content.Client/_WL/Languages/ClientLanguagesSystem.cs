@@ -6,6 +6,7 @@ namespace Content.Client._WL.Languages;
 
 public sealed partial class ClientLanguagesSystem : SharedLanguagesSystem
 {
+    [Dependency] private readonly IEntityManager _ent = default!;
 
     public override void Initialize()
     {
@@ -13,6 +14,7 @@ public sealed partial class ClientLanguagesSystem : SharedLanguagesSystem
 
         SubscribeNetworkEvent<LanguagesInfoEvent>(OnLanguagesInfoEvent);
         SubscribeNetworkEvent<LanguageChangeEvent>(OnGlobalLanguageChange);
+        SubscribeNetworkEvent<LanguagesSyncEvent>(OnLanguagesSync);
 
         SubscribeLocalEvent<LanguagesComponent, LanguageChangeEvent>(OnLocalLanguageChange);
     }
@@ -47,6 +49,18 @@ public sealed partial class ClientLanguagesSystem : SharedLanguagesSystem
     {
         var entity = GetEntity(msg.Entity);
         OnLanguageChange(entity, (string)msg.Language);
+    }
+
+    public void OnLanguagesSync(LanguagesSyncEvent msg, EntitySessionEventArgs args)
+    {
+        var entity = _ent.GetEntity(msg.Entity);
+        if (!TryComp<LanguagesComponent>(entity, out var component))
+            return;
+
+        component.Speaking = msg.Speaking;
+        component.Understood = msg.Understood;
+
+        Dirty(entity, component);
     }
 
     private void OnLanguagesInfoEvent(LanguagesInfoEvent msg, EntitySessionEventArgs args)

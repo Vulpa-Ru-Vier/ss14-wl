@@ -56,6 +56,12 @@ public abstract class SharedLanguagesSystem : EntitySystem
         return true;
     }
 
+    public void SyncLanguages(NetEntity netEnt, LanguagesComponent comp)
+    {
+        var ev = new LanguagesSyncEvent(netEnt, comp.Speaking, comp.Understood);
+        RaiseNetworkEvent(ev);
+    }
+
     public void OnLanguageChange(EntityUid entity, string language)
     {
         if (!TryComp<LanguagesComponent>(entity, out var component))
