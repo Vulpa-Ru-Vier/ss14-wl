@@ -95,6 +95,15 @@
             sprite: Corvax/Mobs/Species/displacement.rsi
             state: shoes
     # Corvax-Displacements-End
+  #WL-Changes: Languages start
+  - type: LanguagesSpeeking
+    speekingLanguages:
+      - Translate
+      - SintaUnati
+    understandingLanguages:
+      - Translate
+      - SintaUnati
+  #WL-Changes: Languages end
 
 - type: entity
   parent: BaseSpeciesDummy

@@ -130,20 +130,32 @@
   description: language-oldearth-desc
   obfuscation:
     !type:Utf16ReplacementObfuscation
-      utf16start: 192
-      utf16end: 591
+      utf16start: 224
+      utf16end: 382
   icon:
     sprite: /Textures/_WL/Interface/Languages/languages.rsi
-    state: sareng
+    state: human
+
+- type: language
+  id: Kuniluc
+  name: language-vulpa
+  description: language-vulpa-desc
+  obfuscation:
+    !type:Utf16ReplacementObfuscation
+      utf16start: 224
+      utf16end: 382
+  icon:
+    sprite: /Textures/_WL/Interface/Languages/languages.rsi
+    state: vulpa
 
 - type: language
   id: Sarengis
-  name: language-sareng-lang
-  description: language-sareng-lang-desc
+  name: language-sareng
+  description: language-sareng-desc
   obfuscation:
     !type:Utf16ReplacementObfuscation
-      utf16start: 192
-      utf16end: 591
+      utf16start: 902
+      utf16end: 1023
   icon:
     sprite: /Textures/_WL/Interface/Languages/languages.rsi
     state: sareng
@@ -191,6 +203,39 @@
     sprite: /Textures/_WL/Interface/Languages/languages.rsi
     state: diona
 
+- type: language
+  id: VoxPigin
+  name: language-vox
+  description: language-vox-desc
+  obfuscation:
+    !type:ByCharReplacementObfuscation
+      replacement:
+        - г
+        - з
+        - с
+        - ф
+        - дх
+        - а
+        - ра
+        - и
+        - ии
+        - ка
+        - к
+        - ц
+        - рр
+        - са
+        - а
+        - х
+        - кс
+        - г
+        - скр
+        - ск
+        - кр
+  icon:
+    sprite: /Textures/_WL/Interface/Languages/languages.rsi
+    state: unati
+
+
 - type: entity
   parent: MobDebugRandomCounter
   id: MobDebugCounterLanguageSmart
@@ -202,15 +247,21 @@
       currentLanguage: Translate
       understandingLanguages:
         - Translate
+        - OldEarth
         - SintaUnati
         - Sarengis
         - Weaver
         - Ternary
         - RootSpeak
+        - VoxPigin
+        - Kuniluc
       speekingLanguages:
         - Translate
+        - OldEarth
         - SintaUnati
         - Sarengis
         - Weaver
         - Ternary
         - RootSpeak
+        - VoxPigin
+        - Kuniluc

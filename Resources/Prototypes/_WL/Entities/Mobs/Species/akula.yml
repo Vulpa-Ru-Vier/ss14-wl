@@ -31,6 +31,13 @@
         Female: FemaleAkula
         Unsexed: MaleAkula
     - type: Wagging
+    - type: LanguagesSpeeking
+      speekingLanguages:
+        - Translate
+        - Sarengis
+      understandingLanguages:
+        - Translate
+        - Sarengis
 
 - type: entity
   save: false

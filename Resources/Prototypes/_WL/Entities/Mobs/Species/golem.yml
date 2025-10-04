@@ -238,7 +238,11 @@
       damageRecovery:
         types:
           Asphyxiation: -100
-
+    - type: LanguagesSpeeking
+      speekingLanguages:
+        - Translate
+      understandingLanguages:
+        - Translate
 
 - type: entity
   save: false

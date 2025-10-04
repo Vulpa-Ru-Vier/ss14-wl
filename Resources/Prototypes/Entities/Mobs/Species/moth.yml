@@ -172,6 +172,15 @@
           32:
             sprite: Mobs/Species/Moth/displacement.rsi
             state: shoes
+  #WL-Changes: Languages start
+  - type: LanguagesSpeeking
+    speekingLanguages:
+      - Translate
+      - Weaver
+    understandingLanguages:
+      - Translate
+      - Weaver
+  #WL-Changes: Languages end
 
 - type: entity
   parent: BaseSpeciesDummy
