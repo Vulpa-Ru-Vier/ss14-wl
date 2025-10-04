@@ -552,13 +552,15 @@ public sealed partial class ChatSystem : SharedChatSystem
             listener = session.AttachedEntity.Value;
 
             //WL-Changes: Languages start
+            var afterWrappedMessage = wrappedMessage;
+            var afterWrappedObfuscatedMessage = wrappedobfuscatedMessage;
             if (!_languages.CanUnderstand(source, listener))
             {
-                wrappedMessage = obfusWrappedMessage;
-                wrappedobfuscatedMessage = wrappedbiobfusMessage;
+                afterWrappedMessage = obfusWrappedMessage;
+                afterWrappedObfuscatedMessage = wrappedbiobfusMessage;
                 if (_languages.IsObfusEmoting(source))
                 {
-                    _chatManager.ChatMessageToOne(ChatChannel.Emotes, message, wrappedMessage, source, false, session.Channel);
+                    _chatManager.ChatMessageToOne(ChatChannel.Emotes, message, /*WL-Changes: Languages*/afterWrappedMessage/*WL-Changes: Languages*/, source, false, session.Channel);
                     continue;
                 }
             }
@@ -568,16 +570,16 @@ public sealed partial class ChatSystem : SharedChatSystem
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
 
             if (data.Range <= WhisperClearRange || data.Observer)
-                _chatManager.ChatMessageToOne(ChatChannel.Whisper, message, wrappedMessage, source, false, session.Channel);
+                _chatManager.ChatMessageToOne(ChatChannel.Whisper, message, /*WL-Changes: Languages*/afterWrappedMessage/*WL-Changes: Languages*/, source, false, session.Channel);
             //If listener is too far, they only hear fragments of the message
             else if (_examineSystem.InRangeUnOccluded(source, listener, WhisperMuffledRange))
-                _chatManager.ChatMessageToOne(ChatChannel.Whisper, obfuscatedMessage, wrappedobfuscatedMessage, source, false, session.Channel);
+                _chatManager.ChatMessageToOne(ChatChannel.Whisper, obfuscatedMessage, /*WL-Changes: Languages*/afterWrappedObfuscatedMessage/*WL-Changes: Languages*/, source, false, session.Channel);
             //If listener is too far and has no line of sight, they can't identify the whisperer's identity
             else
                 _chatManager.ChatMessageToOne(ChatChannel.Whisper, obfuscatedMessage, wrappedUnknownMessage, source, false, session.Channel);
         }
 
-        _replay.RecordServerMessage(new ChatMessage(ChatChannel.Whisper, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
+        _replay.RecordServerMessage(new ChatMessage(ChatChannel.Whisper, message, /*WL-Changes: Languages*/afterWrappedMessage/*WL-Changes: Languages*/, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
 
         var ev = new EntitySpokeEvent(source, message, originalMessage, channel, obfuscatedMessage);
         RaiseLocalEvent(source, ev, true);
@@ -749,11 +751,13 @@ public sealed partial class ChatSystem : SharedChatSystem
             EntityUid listener = session.AttachedEntity.Value;
             Logger.Debug(listener.Id.ToString());
             var entRange = MessageRangeCheck(session, data, range);
+            var afterWrappedMessage = wrappedMessage;
+            var afterChannel = channel;
             if (!_languages.CanUnderstand(source, listener))
             {
-                wrappedMessage = obfusWrappedMessage;
+                afterWrappedMessage = obfusWrappedMessage;
                 if (_languages.IsObfusEmoting(source) && channel != ChatChannel.LOOC)
-                    channel = ChatChannel.Emotes;
+                    afterChannel = ChatChannel.Emotes;
             }
 
             //WL-Changes: Languages end
@@ -761,7 +765,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (entRange == MessageRangeCheckResult.Disallowed)
                 continue;
             var entHideChat = entRange == MessageRangeCheckResult.HideChat;
-            _chatManager.ChatMessageToOne(channel, message, wrappedMessage, source, entHideChat, session.Channel, author: author);
+            _chatManager.ChatMessageToOne(/*WL-Changes: Languages*/afterChannel/*WL-Changes: Languages*/, message, /*WL-Changes: Languages*/afterWrappedMessage/*WL-Changes: Languages*/, source, entHideChat, session.Channel, author: author);
         }
 
         _replay.RecordServerMessage(new ChatMessage(channel, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));

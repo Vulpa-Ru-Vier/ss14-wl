@@ -30,6 +30,6 @@ public sealed partial class LanguagesSpeekingComponent : Component
         public bool IsSpeeking = default!;
         public string CurrentLanguage = default!;
         public List<ProtoId<LanguagePrototype>> SpeekingLanguages = default!;
-        public List<ProtoId<LanguagePrototype>> UnderstangingLanguages = default!;
+        public List<ProtoId<LanguagePrototype>> UnderstandingLanguages = default!;
     }
 }

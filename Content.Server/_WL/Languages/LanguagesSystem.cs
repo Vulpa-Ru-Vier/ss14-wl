@@ -65,26 +65,6 @@ public sealed class LanguagesSystem : SharedLanguagesSystem
         OnLanguageChange(entity, (string)msg.Language);
     }
 
-    public string GetHeardMessage(string message, EntityUid source, EntityUid listener)
-    {
-        if (!TryComp<LanguagesSpeekingComponent>(source, out var source_lang))
-            return message;
-
-        if (!TryComp<LanguagesSpeekingComponent>(listener, out var listen_lang))
-            return message;
-
-        var message_language = source_lang.CurrentLanguage;
-        if (listen_lang.IsUnderstanding && listen_lang.IsSpeeking && listen_lang.UnderstandingLanguages.Contains(message_language))
-        {
-            return message;
-        }
-        else
-        {
-            var obfus = ObfuscateMessage(message, message_language);
-            return obfus;
-        }
-    }
-
     public string ObfuscateMessageFromSource(string message, EntityUid source)
     {
         if (!TryComp<LanguagesSpeekingComponent>(source, out var source_lang))
@@ -178,7 +158,7 @@ public sealed class LanguagesSystem : SharedLanguagesSystem
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", name),
-            ("message", obfusMessage));
+            ("message", FormattedMessage.EscapeText(obfusMessage)));
         return wrappedMessage;
     }
 }

@@ -123,6 +123,9 @@ public partial class Utf16ReplacementObfuscation : ObfuscationMethod
 
     internal override void Obfuscate(StringBuilder builder, string message, int global_seed)
     {
+        var maxLen = System.Math.Max(minlength, maxlength);
+        var minLen = System.Math.Max(1, minlength);
+
         int buffer = 0;
         int counter = 0;
         const char eof = (char) 0;
@@ -133,7 +136,7 @@ public partial class Utf16ReplacementObfuscation : ObfuscationMethod
             {
                 if (counter > 0)
                 {
-                    var length = randlength ? PseudoRandom(buffer, global_seed, 1, maxlength) : counter;
+                    var length = randlength ? PseudoRandom(buffer, global_seed, minLen, maxLen) : counter;
                     for (int j = 0; j <= length; j++)
                     {
                         var char_code = PseudoRandom(buffer*(j+3)+(j+1)*counter, global_seed, utf16start, utf16end);
@@ -186,6 +189,9 @@ public partial class ByCharReplacementObfuscation : ObfuscationMethod
 
     internal override void Obfuscate(StringBuilder builder, string message, int global_seed)
     {
+        var maxLen = Math.Max(minlength, maxlength);
+        var minLen = Math.Max(1, minlength);
+
         int buffer = 0;
         int counter = 0;
         const char eof = (char) 0;
@@ -196,7 +202,7 @@ public partial class ByCharReplacementObfuscation : ObfuscationMethod
             {
                 if (counter > 0)
                 {
-                    var length = randlength ? PseudoRandom(buffer, global_seed, 1, maxlength) : counter;
+                    var length = randlength ? PseudoRandom(buffer, global_seed, minLen, maxLen) : counter;
                     for (int j = 0; j <= length; j++)
                     {
                         var index = PseudoRandom(buffer*(j+3)+(j+1)*counter, global_seed, 0, Replacement.Count - 1);
@@ -239,8 +245,10 @@ public partial class EmoteObfuscation : ObfuscationMethod
 
     internal override void Obfuscate(StringBuilder builder, string message, int global_seed)
     {
-        double gap = max - min;
-        int index = (int)System.Math.Round((message.Length - min) / gap * Replacement.Count);
+        var gap = Math.Max(1, max - min);
+        var normalized = (double)(message.Length - min) / gap;
+        int index = (int)Math.Round(normalized * Replacement.Count);
+
         index = System.Math.Max(0, System.Math.Min(index, Replacement.Count - 1));
         builder.Append(Replacement[index]);
     }

@@ -32,10 +32,8 @@ public sealed class RadioSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
-    //WL-Changes: Languages start
+
     [Dependency] private readonly LanguagesSystem _languages = default!; //WL-Changes: Languages
-    private readonly SharedTransformSystem _transform = default!; //WL-Changes: Languages
-    //WL-Changes: Languages start
 
     // set used to prevent radio feedback loops.
     private readonly HashSet<string> _messages = new();

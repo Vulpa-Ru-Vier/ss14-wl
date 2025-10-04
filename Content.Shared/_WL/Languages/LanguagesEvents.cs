@@ -11,7 +11,7 @@ public sealed partial class LanguageChangeEvent : EntityEventArgs
 {
     public NetEntity Entity { get; }
 
-    public ProtoId<LanguagePrototype> Language { get; set; }
+    public ProtoId<LanguagePrototype> Language { get; }
 
     public LanguageChangeEvent(NetEntity entity, ProtoId<LanguagePrototype> protoId)
     {

@@ -58,16 +58,11 @@ public abstract class SharedLanguagesSystem : EntitySystem
 
     public void OnLanguageChange(EntityUid entity, string language)
     {
-        Logger.Debug("sharedo STARTO");
-        Logger.Debug(entity.Id.ToString());
         if (!TryComp<LanguagesSpeekingComponent>(entity, out var component))
-        {
-            Logger.Debug("sharedo NO COMPO");
             return;
-        }
+
         component.CurrentLanguage = language;
         Dirty(entity, component);
-        Logger.Debug("sharedo");
 
         var netEntity = GetNetEntity(entity);
         var ev = new LanguagesInfoEvent(netEntity, language, component.SpeekingLanguages, component.UnderstandingLanguages);

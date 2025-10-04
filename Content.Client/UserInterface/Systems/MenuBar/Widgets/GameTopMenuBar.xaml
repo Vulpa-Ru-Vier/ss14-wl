@@ -113,7 +113,7 @@
         Access="Internal"
         Icon="{xe:Tex '/Textures/Interface/info.svg.192dpi.png'}"
         BoundKey = "{x:Static is:ContentKeyFunctions.LanguageChoose}"
-        ToolTip="Meowing"
+        ToolTip="{Loc 'ui-languages-menu-button-tip'}"
         MinSize="48 64"
         HorizontalExpand="True"
         AppendStyleClass="{x:Static style:StyleBase.ButtonSquare}"
