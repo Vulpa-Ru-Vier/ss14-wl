@@ -96,11 +96,11 @@
             state: shoes
     # Corvax-Displacements-End
   #WL-Changes: Languages start
-  - type: LanguagesSpeeking
-    speekingLanguages:
+  - type: Languages
+    speaking:
       - Translate
       - SintaUnati
-    understandingLanguages:
+    understood:
       - Translate
       - SintaUnati
   #WL-Changes: Languages end

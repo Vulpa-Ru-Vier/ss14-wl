@@ -38,10 +38,10 @@ public abstract class SharedLanguagesSystem : EntitySystem
         if (!_ent.TryGetEntity(netEnt, out var ent))
             return false;
 
-        if (!TryComp<LanguagesSpeekingComponent>(ent, out var comp))
+        if (!TryComp<LanguagesComponent>(ent, out var comp))
             return false;
         Logger.Debug("TryChangeLanguage");
-        if (!comp.UnderstandingLanguages.Contains(protoid))
+        if (!comp.Understood.Contains(protoid))
             return false;
 
         var ev = new LanguageChangeEvent(netEnt, protoid);
@@ -49,7 +49,7 @@ public abstract class SharedLanguagesSystem : EntitySystem
         RaiseLocalEvent(ent.Value, ev);
         Logger.Debug("Ev 1");
 
-        var ev2 = new LanguagesInfoEvent(netEnt, (string)protoid, comp.SpeekingLanguages, comp.UnderstandingLanguages);
+        var ev2 = new LanguagesInfoEvent(netEnt, (string)protoid, comp.Speaking, comp.Understood);
         RaiseNetworkEvent(ev2);
         Logger.Debug("Ev 2");
 
@@ -58,14 +58,14 @@ public abstract class SharedLanguagesSystem : EntitySystem
 
     public void OnLanguageChange(EntityUid entity, string language)
     {
-        if (!TryComp<LanguagesSpeekingComponent>(entity, out var component))
+        if (!TryComp<LanguagesComponent>(entity, out var component))
             return;
 
         component.CurrentLanguage = language;
         Dirty(entity, component);
 
         var netEntity = GetNetEntity(entity);
-        var ev = new LanguagesInfoEvent(netEntity, language, component.SpeekingLanguages, component.UnderstandingLanguages);
+        var ev = new LanguagesInfoEvent(netEntity, language, component.Speaking, component.Understood);
         RaiseNetworkEvent(ev);
     }
 
@@ -74,15 +74,15 @@ public abstract class SharedLanguagesSystem : EntitySystem
     {
         public readonly NetEntity NetEntity;
         public readonly string CurrentLanguage;
-        public readonly List<ProtoId<LanguagePrototype>> SpeekingLanguages;
-        public readonly List<ProtoId<LanguagePrototype>> UnderstandingLanguages;
+        public readonly List<ProtoId<LanguagePrototype>> Speaking;
+        public readonly List<ProtoId<LanguagePrototype>> Understood;
 
-        public LanguagesInfoEvent(NetEntity netEntity, string current, List<ProtoId<LanguagePrototype>> speeking, List<ProtoId<LanguagePrototype>> understand)
+        public LanguagesInfoEvent(NetEntity netEntity, string current, List<ProtoId<LanguagePrototype>> speeking, List<ProtoId<LanguagePrototype>> understood)
         {
             NetEntity = netEntity;
             CurrentLanguage = current;
-            SpeekingLanguages = speeking;
-            UnderstandingLanguages = understand;
+            Speaking = speeking;
+            Understood = understood;
         }
     }
 }

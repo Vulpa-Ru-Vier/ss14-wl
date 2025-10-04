@@ -169,11 +169,11 @@
           sprite: Mobs/Species/Vox/displacement.rsi
           state: hand_r
   #WL-Changes: Languages start
-  - type: LanguagesSpeeking
-    speekingLanguages:
+  - type: Languages
+    speaking:
       - Translate
       - VoxPigin
-    understandingLanguages:
+    understood:
       - Translate
       - VoxPigin
   #WL-Changes: Languages end

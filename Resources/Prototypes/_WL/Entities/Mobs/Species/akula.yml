@@ -31,11 +31,11 @@
         Female: FemaleAkula
         Unsexed: MaleAkula
     - type: Wagging
-    - type: LanguagesSpeeking
-      speekingLanguages:
+    - type: Languages
+      speaking:
         - Translate
         - Sarengis
-      understandingLanguages:
+      understood:
         - Translate
         - Sarengis
 

@@ -243,9 +243,8 @@
   description: He can language
   suffix: DEBUG, LANG
   components:
-    - type: LanguagesSpeeking
-      currentLanguage: Translate
-      understandingLanguages:
+    - type: Languages
+      understood:
         - Translate
         - OldEarth
         - SintaUnati
@@ -255,7 +254,7 @@
         - RootSpeak
         - VoxPigin
         - Kuniluc
-      speekingLanguages:
+      speaking:
         - Translate
         - OldEarth
         - SintaUnati

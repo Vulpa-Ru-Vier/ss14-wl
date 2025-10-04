@@ -20,14 +20,14 @@ public sealed class LanguagesSystem : SharedLanguagesSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<LanguagesSpeekingComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<LanguagesSpeekingComponent, ComponentInit>(OnComponentInit);
+        SubscribeLocalEvent<LanguagesComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<LanguagesComponent, ComponentInit>(OnComponentInit);
         SubscribeNetworkEvent<LanguageChangeEvent>(OnGlobalLanguageChange);
     }
 
-    public void OnMapInit(EntityUid ent, LanguagesSpeekingComponent component, ref MapInitEvent args)
+    public void OnMapInit(EntityUid ent, LanguagesComponent component, ref MapInitEvent args)
     {
-        var langs = component.SpeekingLanguages;
+        var langs = component.Speaking;
         if (langs.Count == 0)
             return;
         foreach (ProtoId<LanguagePrototype> protoid in langs)
@@ -41,9 +41,9 @@ public sealed class LanguagesSystem : SharedLanguagesSystem
         }
     }
 
-    public void OnComponentInit(EntityUid ent, LanguagesSpeekingComponent component, ref ComponentInit args)
+    public void OnComponentInit(EntityUid ent, LanguagesComponent component, ref ComponentInit args)
     {
-        var langs = component.SpeekingLanguages;
+        var langs = component.Speaking;
         if (langs.Count == 0)
             return;
         foreach (ProtoId<LanguagePrototype> protoid in langs)
@@ -60,14 +60,14 @@ public sealed class LanguagesSystem : SharedLanguagesSystem
     public void OnGlobalLanguageChange(LanguageChangeEvent msg, EntitySessionEventArgs args)
     {
         var entity = _ent.GetEntity(msg.Entity);
-        if (!TryComp<LanguagesSpeekingComponent>(entity, out var component))
+        if (!TryComp<LanguagesComponent>(entity, out var component))
             return;
         OnLanguageChange(entity, (string)msg.Language);
     }
 
     public string ObfuscateMessageFromSource(string message, EntityUid source)
     {
-        if (!TryComp<LanguagesSpeekingComponent>(source, out var source_lang))
+        if (!TryComp<LanguagesComponent>(source, out var source_lang))
             return message;
         else
         {
@@ -82,23 +82,23 @@ public sealed class LanguagesSystem : SharedLanguagesSystem
         if (source == listener)
             return true;
 
-        if (!TryComp<LanguagesSpeekingComponent>(source, out var source_lang))
+        if (!TryComp<LanguagesComponent>(source, out var source_lang))
         {
             return true;
         }
 
-        if (!TryComp<LanguagesSpeekingComponent>(listener, out var listen_lang))
+        if (!TryComp<LanguagesComponent>(listener, out var listen_lang))
         {
             return true;
         }
 
         var message_language = source_lang.CurrentLanguage;
-        return listen_lang.IsUnderstanding && source_lang.IsSpeeking && listen_lang.UnderstandingLanguages.Contains(message_language);
+        return listen_lang.IsUnderstanding && source_lang.IsSpeaking && listen_lang.Understood.Contains(message_language);
     }
 
     public bool IsObfusEmoting(EntityUid source)
     {
-        if (!TryComp<LanguagesSpeekingComponent>(source, out var source_lang))
+        if (!TryComp<LanguagesComponent>(source, out var source_lang))
             return false;
         else
         {

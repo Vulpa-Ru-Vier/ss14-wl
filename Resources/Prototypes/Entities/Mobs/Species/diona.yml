@@ -115,11 +115,11 @@
             state: jumpsuit-female
   - type: Rootable
   #WL-Changes: Languages start
-  - type: LanguagesSpeeking
-    speekingLanguages:
+  - type: Languages
+    speaking:
       - Translate
       - RootSpeak
-    understandingLanguages:
+    understood:
       - Translate
       - RootSpeak
   #WL-Changes: Languages end

@@ -6,19 +6,19 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations;
 namespace Content.Shared._WL.Languages.Components;
 
 [RegisterComponent, NetworkedComponent]
-public sealed partial class LanguagesSpeekingComponent : Component
+public sealed partial class LanguagesComponent : Component
 {
     [DataField]
     public bool IsUnderstanding = true;
 
     [DataField]
-    public bool IsSpeeking = true;
+    public bool IsSpeaking = true;
 
     [DataField]
-    public List<ProtoId<LanguagePrototype>> UnderstandingLanguages = [];
+    public List<ProtoId<LanguagePrototype>> Speaking = [];
 
     [DataField]
-    public List<ProtoId<LanguagePrototype>> SpeekingLanguages = [];
+    public List<ProtoId<LanguagePrototype>> Understood = [];
 
     [DataField]
     public string CurrentLanguage = "";
@@ -27,9 +27,9 @@ public sealed partial class LanguagesSpeekingComponent : Component
     public sealed class State : ComponentState
     {
         public bool IsUnderstanding = default!;
-        public bool IsSpeeking = default!;
+        public bool IsSpeaking = default!;
         public string CurrentLanguage = default!;
-        public List<ProtoId<LanguagePrototype>> SpeekingLanguages = default!;
-        public List<ProtoId<LanguagePrototype>> UnderstandingLanguages = default!;
+        public List<ProtoId<LanguagePrototype>> Speaking= default!;
+        public List<ProtoId<LanguagePrototype>> Understood = default!;
     }
 }

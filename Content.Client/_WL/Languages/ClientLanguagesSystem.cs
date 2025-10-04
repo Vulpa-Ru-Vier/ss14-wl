@@ -14,18 +14,18 @@ public sealed partial class ClientLanguagesSystem : SharedLanguagesSystem
         SubscribeNetworkEvent<LanguagesInfoEvent>(OnLanguagesInfoEvent);
         SubscribeNetworkEvent<LanguageChangeEvent>(OnGlobalLanguageChange);
 
-        SubscribeLocalEvent<LanguagesSpeekingComponent, LanguageChangeEvent>(OnLocalLanguageChange);
+        SubscribeLocalEvent<LanguagesComponent, LanguageChangeEvent>(OnLocalLanguageChange);
     }
 
     public event Action<LanguagesData>? OnLanguagesUpdate;
 
-    public List<LanguagePrototype>? GetSpeekingLanguages(EntityUid entity)
+    public List<LanguagePrototype>? GetSpeakingLanguages(EntityUid entity)
     {
-        if (!TryComp<LanguagesSpeekingComponent>(entity, out var comp))
+        if (!TryComp<LanguagesComponent>(entity, out var comp))
             return null;
 
         var prototypes = new List<LanguagePrototype>();
-        foreach (ProtoId<LanguagePrototype>protoid in comp.SpeekingLanguages)
+        foreach (ProtoId<LanguagePrototype>protoid in comp.Speaking)
         {
             var proto = GetLanguagePrototype(protoid);
             if (proto == null)
@@ -38,7 +38,7 @@ public sealed partial class ClientLanguagesSystem : SharedLanguagesSystem
         return prototypes;
     }
 
-    public void OnLocalLanguageChange(EntityUid entity, LanguagesSpeekingComponent comp, ref LanguageChangeEvent args)
+    public void OnLocalLanguageChange(EntityUid entity, LanguagesComponent comp, ref LanguageChangeEvent args)
     {
         OnLanguageChange(entity, (string)args.Language);
     }
@@ -52,7 +52,7 @@ public sealed partial class ClientLanguagesSystem : SharedLanguagesSystem
     private void OnLanguagesInfoEvent(LanguagesInfoEvent msg, EntitySessionEventArgs args)
     {
         var entity = GetEntity(msg.NetEntity);
-        var data = new LanguagesData(entity, msg.CurrentLanguage, msg.SpeekingLanguages, msg.UnderstandingLanguages);
+        var data = new LanguagesData(entity, msg.CurrentLanguage, msg.Speaking, msg.Understood);
 
         OnLanguagesUpdate?.Invoke(data);
     }
@@ -61,6 +61,6 @@ public sealed partial class ClientLanguagesSystem : SharedLanguagesSystem
 public readonly record struct LanguagesData(
     EntityUid Entity,
     string CurrentLanguage,
-    List<ProtoId<LanguagePrototype>> SpeekingLanguages,
-    List<ProtoId<LanguagePrototype>> UnderstandingLanguages
+    List<ProtoId<LanguagePrototype>> Speaking,
+    List<ProtoId<LanguagePrototype>> Understood
 );

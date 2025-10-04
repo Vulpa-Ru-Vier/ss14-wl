@@ -139,7 +139,7 @@ public sealed class LanguagesUIController : UIController, IOnStateEntered<Gamepl
             return;
         }
 
-        var (entity, current, speeking, understanding) = data;
+        var (entity, current, speeking, understood) = data;
 
         if (_player.LocalEntity != entity)
             return;
@@ -237,7 +237,7 @@ public sealed class LanguagesUIController : UIController, IOnStateEntered<Gamepl
         if (_window == null || !_window.IsOpen)
             return;
 
-        if (!_ent.TryGetComponent<LanguagesSpeekingComponent>(_player.LocalEntity, out var comp))
+        if (!_ent.TryGetComponent<LanguagesComponent>(_player.LocalEntity, out var comp))
             return;
 
         var entity = _player.LocalEntity;
@@ -247,7 +247,7 @@ public sealed class LanguagesUIController : UIController, IOnStateEntered<Gamepl
         else
             return;
 
-        var data = new LanguagesData(entt, comp.CurrentLanguage, comp.SpeekingLanguages, comp.UnderstandingLanguages);
+        var data = new LanguagesData(entt, comp.CurrentLanguage, comp.Speaking, comp.Understood);
 
         LanguagesUpdated(data);
     }
@@ -289,8 +289,8 @@ public sealed class LanguagesUIController : UIController, IOnStateEntered<Gamepl
         }
         else
         {
-            UpdateLanguages();
             _window.Open();
+            UpdateLanguages();
         }
     }
 }

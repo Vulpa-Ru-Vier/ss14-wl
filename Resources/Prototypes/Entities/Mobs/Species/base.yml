@@ -354,9 +354,9 @@
       enum.HumanoidMarkingModifierKey.Key: # sure, this can go here too
         type: HumanoidMarkingModifierBoundUserInterface
   #WL-Changes: Languages start
-  - type: LanguagesSpeeking
-    speekingLanguages:
+  - type: Languages
+    speaking:
       - Translate
-    understandingLanguages:
+    understood:
       - Translate
   #WL-Changes: Languages end

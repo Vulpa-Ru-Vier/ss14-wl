@@ -579,7 +579,7 @@ public sealed partial class ChatSystem : SharedChatSystem
                 _chatManager.ChatMessageToOne(ChatChannel.Whisper, obfuscatedMessage, wrappedUnknownMessage, source, false, session.Channel);
         }
 
-        _replay.RecordServerMessage(new ChatMessage(ChatChannel.Whisper, message, /*WL-Changes: Languages*/afterWrappedMessage/*WL-Changes: Languages*/, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
+        _replay.RecordServerMessage(new ChatMessage(ChatChannel.Whisper, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
 
         var ev = new EntitySpokeEvent(source, message, originalMessage, channel, obfuscatedMessage);
         RaiseLocalEvent(source, ev, true);

@@ -53,11 +53,6 @@
     speechVerb: SmallMob
     audioParams:
       volume: -5
-  - type: LanguagesSpeeking
-    speekingLanguages:
-      - Translate
-    understandingLanguages:
-      - Translate
 
 - type: entity
   save: false

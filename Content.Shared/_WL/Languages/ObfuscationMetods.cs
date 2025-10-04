@@ -189,8 +189,8 @@ public partial class ByCharReplacementObfuscation : ObfuscationMethod
 
     internal override void Obfuscate(StringBuilder builder, string message, int global_seed)
     {
-        var maxLen = Math.Max(minlength, maxlength);
-        var minLen = Math.Max(1, minlength);
+        var maxLen = System.Math.Max(minlength, maxlength);
+        var minLen = System.Math.Max(1, minlength);
 
         int buffer = 0;
         int counter = 0;
@@ -245,9 +245,9 @@ public partial class EmoteObfuscation : ObfuscationMethod
 
     internal override void Obfuscate(StringBuilder builder, string message, int global_seed)
     {
-        var gap = Math.Max(1, max - min);
+        var gap = System.Math.Max(1, max - min);
         var normalized = (double)(message.Length - min) / gap;
-        int index = (int)Math.Round(normalized * Replacement.Count);
+        int index = (int)System.Math.Round(normalized * Replacement.Count);
 
         index = System.Math.Max(0, System.Math.Min(index, Replacement.Count - 1));
         builder.Append(Replacement[index]);

@@ -173,11 +173,11 @@
             sprite: Mobs/Species/Moth/displacement.rsi
             state: shoes
   #WL-Changes: Languages start
-  - type: LanguagesSpeeking
-    speekingLanguages:
+  - type: Languages
+    speaking:
       - Translate
       - Weaver
-    understandingLanguages:
+    understood:
       - Translate
       - Weaver
   #WL-Changes: Languages end

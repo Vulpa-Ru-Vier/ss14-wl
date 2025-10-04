@@ -76,10 +76,10 @@
       params:
         variation: 0.2
         volume: -14
-  - type: LanguagesSpeeking
-    speekingLanguages:
+  - type: Languages
+    speaking:
       - Translate
-    understandingLanguages:
+    understood:
       - Translate
 
 - type: entity

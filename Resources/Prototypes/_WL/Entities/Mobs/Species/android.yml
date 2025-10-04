@@ -215,11 +215,11 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
-  - type: LanguagesSpeeking
-    speekingLanguages:
+  - type: Languages
+    speaking:
       - Translate
       - Ternary
-    understandingLanguages:
+    understood:
       - Translate
       - Ternary
 

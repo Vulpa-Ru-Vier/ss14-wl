@@ -29,11 +29,6 @@
     - type: IntrinsicRadioTransmitter
       channels:
       - Hitin
-    - type: LanguagesSpeeking
-      speekingLanguages:
-        - Translate
-      understandingLanguages:
-        - Translate
 
 - type: entity
   save: false
