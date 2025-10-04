@@ -216,12 +216,12 @@
     - FootstepSound
     - DoorBumpOpener
   - type: LanguagesSpeeking
-      speekingLanguages:
-        - Translate
-        - Ternary
-      understandingLanguages:
-        - Translate
-        - Ternary
+    speekingLanguages:
+      - Translate
+      - Ternary
+    understandingLanguages:
+      - Translate
+      - Ternary
 
 
 

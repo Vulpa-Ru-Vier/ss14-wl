@@ -39,7 +39,6 @@ public sealed class LanguagesUIController : UIController, IOnStateEntered<Gamepl
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
-    [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
     [UISystemDependency] private readonly ClientLanguagesSystem _languages = default!;
     [UISystemDependency] private readonly SpriteSystem _sprite = default!;
 
@@ -290,7 +289,7 @@ public sealed class LanguagesUIController : UIController, IOnStateEntered<Gamepl
         }
         else
         {
-            _characterInfo.RequestCharacterInfo();
+            UpdateLanguages();
             _window.Open();
         }
     }

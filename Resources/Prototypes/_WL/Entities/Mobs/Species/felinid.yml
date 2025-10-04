@@ -55,12 +55,12 @@
     sprite: Mobs/Species/Human/parts.rsi
     state: full
   - type: LanguagesSpeeking
-      speekingLanguages:
-        - Translate
-        - OldEarth
-      understandingLanguages:
-        - Translate
-        - OldEarth
+    speekingLanguages:
+      - Translate
+      - OldEarth
+    understandingLanguages:
+      - Translate
+      - OldEarth
 
 - type: entity
   save: false

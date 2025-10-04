@@ -77,10 +77,10 @@
         variation: 0.2
         volume: -14
   - type: LanguagesSpeeking
-      speekingLanguages:
-        - Translate
-      understandingLanguages:
-        - Translate
+    speekingLanguages:
+      - Translate
+    understandingLanguages:
+      - Translate
 
 - type: entity
   save: false
