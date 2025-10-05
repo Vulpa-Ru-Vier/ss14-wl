@@ -174,7 +174,7 @@ public sealed partial class TTSSystem : EntitySystem
             var check = _languages.CanUnderstand(uid, listener);
 
             if (!check && _languages.IsObfusEmoting(uid)) continue;
-            RaiseNetworkEvent(check ? langTtsEvent : fullTtsEvent, session);
+            RaiseNetworkEvent(!check ? langTtsEvent : fullTtsEvent, session);
         }
     }
 
