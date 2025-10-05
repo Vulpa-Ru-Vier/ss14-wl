@@ -94,6 +94,7 @@
   id: SintaUnati
   name: language-unati
   description: language-unati-desc
+  color: '#ede028'
   obfuscation:
     !type:ByCharReplacementObfuscation
       replacement:
@@ -128,6 +129,7 @@
   id: OldEarth
   name: language-oldearth
   description: language-oldearth-desc
+  color: "#5fff33"
   obfuscation:
     !type:Utf16ReplacementObfuscation
       utf16start: 224
@@ -140,6 +142,7 @@
   id: Kuniluc
   name: language-vulpa
   description: language-vulpa-desc
+  color: '#cccc00'
   obfuscation:
     !type:Utf16ReplacementObfuscation
       utf16start: 224
@@ -152,6 +155,7 @@
   id: Sarengis
   name: language-sareng
   description: language-sareng-desc
+  color: '#ff644d'
   obfuscation:
     !type:Utf16ReplacementObfuscation
       utf16start: 902
@@ -164,6 +168,7 @@
   id: Weaver
   name: language-weaver
   description: language-weaver-desc
+  color: '#f5ee8c'
   obfuscation:
     !type:EmoteObfuscation
       replacement:
@@ -179,6 +184,7 @@
   id: Ternary
   name: language-ternary
   description: language-ternary-desc
+  color: '#03b5fc'
   obfuscation:
     !type:ByCharReplacementObfuscation
       replacement:
@@ -193,6 +199,7 @@
   id: RootSpeak
   name: language-rootspeak
   description: language-rootspeak-desc
+  color: '#309100'
   obfuscation:
     !type:EmoteObfuscation
       replacement:
@@ -207,6 +214,7 @@
   id: VoxPigin
   name: language-vox
   description: language-vox-desc
+  color: '#8c6500'
   obfuscation:
     !type:ByCharReplacementObfuscation
       replacement:
