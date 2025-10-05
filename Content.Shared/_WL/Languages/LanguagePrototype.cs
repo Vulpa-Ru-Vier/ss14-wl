@@ -21,6 +21,6 @@ public sealed partial class LanguagePrototype : IPrototype
     [DataField(required: true)]
     public ObfuscationMethod Obfuscation = ObfuscationMethod.Default;
 
-    [DataField]
-    public string Colour = "#000000";
+    [DataField("color")]
+    public Color Color = Color.White;
 }
