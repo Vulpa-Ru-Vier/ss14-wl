@@ -461,11 +461,12 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         //WL-Changes: Languages start
         var obfusWrappedMessage = _languages.GetObfusWrappedMessage(message, source, name, speech);
+        var obfusMessage = _languages.ObfuscateMessageFromSource(message, source);
 
         SendInVoiceRange(ChatChannel.Local, message, wrappedMessage, obfusWrappedMessage, source, range);
         //WL-Changes: Languages end
 
-        var ev = new EntitySpokeEvent(source, message, originalMessage, null, null);
+        var ev = new EntitySpokeEvent(source, message, originalMessage, null, null, /*WL-Changes: Languages*/obfusMessage, null/*WL-Changes: Languages*/);
         RaiseLocalEvent(source, ev, true);
 
         // To avoid logging any messages sent by entities that are not players, like vendors, cloning, etc.
@@ -536,10 +537,13 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("message", FormattedMessage.EscapeText(obfuscatedMessage)));
 
         //WL-Changes: Languages start
+        var langObfusMessage = _languages.ObfuscateMessageFromSource(message, source);
         var obfusWrappedMessage = _languages.GetObfusWrappedMessage(message, source, name);
-        var biobfMessage = ObfuscateMessageReadability(_languages.ObfuscateMessageFromSource(message, source), 0.2f);
+        var biobfMessage = ObfuscateMessageReadability(langObfusMessage, 0.2f);
         var wrappedbiobfusMessage = Loc.GetString("chat-manager-entity-whisper-wrap-message",
             ("entityName", nameIdentity), ("message", FormattedMessage.EscapeText(biobfMessage)));
+        var obfusUnknownMessage = Loc.GetString("chat-manager-entity-whisper-unknown-wrap-message",
+            ("message", FormattedMessage.EscapeText(biobfMessage)));
         //WL-Changes: Languages start
 
 
@@ -552,15 +556,21 @@ public sealed partial class ChatSystem : SharedChatSystem
             listener = session.AttachedEntity.Value;
 
             //WL-Changes: Languages start
+            var afterMessage = message;
+            var afterObfusMessage = obfuscatedMessage;
             var afterWrappedMessage = wrappedMessage;
             var afterWrappedObfuscatedMessage = wrappedobfuscatedMessage;
+            var afterUnknownMessage = wrappedUnknownMessage;
             if (!_languages.CanUnderstand(source, listener))
             {
+                afterMessage = langObfusMessage;
+                afterObfusMessage = biobfMessage;
                 afterWrappedMessage = obfusWrappedMessage;
                 afterWrappedObfuscatedMessage = wrappedbiobfusMessage;
+                afterUnknownMessage = obfusUnknownMessage;
                 if (_languages.IsObfusEmoting(source))
                 {
-                    _chatManager.ChatMessageToOne(ChatChannel.Emotes, message, /*WL-Changes: Languages*/afterWrappedMessage/*WL-Changes: Languages*/, source, false, session.Channel);
+                    _chatManager.ChatMessageToOne(ChatChannel.Emotes, afterMessage, afterWrappedMessage, source, false, session.Channel);
                     continue;
                 }
             }
@@ -570,18 +580,18 @@ public sealed partial class ChatSystem : SharedChatSystem
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
 
             if (data.Range <= WhisperClearRange || data.Observer)
-                _chatManager.ChatMessageToOne(ChatChannel.Whisper, message, /*WL-Changes: Languages*/afterWrappedMessage/*WL-Changes: Languages*/, source, false, session.Channel);
+                _chatManager.ChatMessageToOne(ChatChannel.Whisper, /*WL-Changes: Languages*/afterMessage, afterWrappedMessage/*WL-Changes: Languages*/, source, false, session.Channel);
             //If listener is too far, they only hear fragments of the message
             else if (_examineSystem.InRangeUnOccluded(source, listener, WhisperMuffledRange))
-                _chatManager.ChatMessageToOne(ChatChannel.Whisper, obfuscatedMessage, /*WL-Changes: Languages*/afterWrappedObfuscatedMessage/*WL-Changes: Languages*/, source, false, session.Channel);
+                _chatManager.ChatMessageToOne(ChatChannel.Whisper, /*WL-Changes: Languages*/afterObfusMessage, afterWrappedObfuscatedMessage/*WL-Changes: Languages*/, source, false, session.Channel);
             //If listener is too far and has no line of sight, they can't identify the whisperer's identity
             else
-                _chatManager.ChatMessageToOne(ChatChannel.Whisper, obfuscatedMessage, wrappedUnknownMessage, source, false, session.Channel);
+                _chatManager.ChatMessageToOne(ChatChannel.Whisper, /*WL-Changes: Languages*/afterObfusMessage, afterUnknownMessage/*WL-Changes: Languages*/, source, false, session.Channel);
         }
 
         _replay.RecordServerMessage(new ChatMessage(ChatChannel.Whisper, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
 
-        var ev = new EntitySpokeEvent(source, message, originalMessage, channel, obfuscatedMessage);
+        var ev = new EntitySpokeEvent(source, message, originalMessage, channel, obfuscatedMessage, /*WL-Changes: Languages*/langObfusMessage, biobfMessage/*WL-Changes: Languages*/);
         RaiseLocalEvent(source, ev, true);
         if (!hideLog)
             if (originalMessage == message)
@@ -740,6 +750,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// </summary>
     private void SendInVoiceRange(ChatChannel channel, string message, string wrappedMessage, string obfusWrappedMessage, EntityUid source, ChatTransmitRange range, NetUserId? author = null)
     {
+        var obfusMessage = _languages.ObfuscateMessageFromSource(message, source); //WL-Changes: Languages
         foreach (var (session, data) in GetRecipients(source, VoiceRange))
         {
             //WL-Changes: Languages start
@@ -749,10 +760,12 @@ public sealed partial class ChatSystem : SharedChatSystem
             }
             EntityUid listener = session.AttachedEntity.Value;
             var entRange = MessageRangeCheck(session, data, range);
+            var afterMessage = message;
             var afterWrappedMessage = wrappedMessage;
             var afterChannel = channel;
             if (!_languages.CanUnderstand(source, listener))
             {
+                afterMessage = obfusMessage;
                 afterWrappedMessage = obfusWrappedMessage;
                 if (_languages.IsObfusEmoting(source) && channel != ChatChannel.LOOC)
                     afterChannel = ChatChannel.Emotes;
@@ -763,7 +776,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (entRange == MessageRangeCheckResult.Disallowed)
                 continue;
             var entHideChat = entRange == MessageRangeCheckResult.HideChat;
-            _chatManager.ChatMessageToOne(/*WL-Changes: Languages*/afterChannel/*WL-Changes: Languages*/, message, /*WL-Changes: Languages*/afterWrappedMessage/*WL-Changes: Languages*/, source, entHideChat, session.Channel, author: author);
+            _chatManager.ChatMessageToOne(/*WL-Changes: Languages*/afterChannel, afterMessage, afterWrappedMessage/*WL-Changes: Languages*/, source, entHideChat, session.Channel, author: author);
         }
 
         _replay.RecordServerMessage(new ChatMessage(channel, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
@@ -998,19 +1011,29 @@ public sealed class EntitySpokeEvent : EntityEventArgs
     public readonly string OriginalMessage;
     public readonly string? ObfuscatedMessage; // not null if this was a whisper
 
+    //WL-Changes: Languages start
+    public readonly string? LangMessage;
+    public readonly string? LangObfusMessage;
+    //WL-Changes: Languages end
+
     /// <summary>
     ///     If the entity was trying to speak into a radio, this was the channel they were trying to access. If a radio
     ///     message gets sent on this channel, this should be set to null to prevent duplicate messages.
     /// </summary>
     public RadioChannelPrototype? Channel;
 
-    public EntitySpokeEvent(EntityUid source, string message, string originalMessage, RadioChannelPrototype? channel, string? obfuscatedMessage)
+    public EntitySpokeEvent(EntityUid source, string message, string originalMessage, RadioChannelPrototype? channel, string? obfuscatedMessage, /*WL-Changes: Languages*/string? langMessage, string? langObfusMessage/*WL-Changes: Languages*/)
     {
         Source = source;
         Message = message;
+        langMessage = message;
         OriginalMessage = originalMessage; // Corvax-TTS: Spec symbol sanitize
         Channel = channel;
         ObfuscatedMessage = obfuscatedMessage;
+        //WL-Changes: Languages start
+        LangMessage = langMessage;
+        LangObfusMessage = langObfusMessage;
+        //WL-Changes: Languages end
     }
 }
 
