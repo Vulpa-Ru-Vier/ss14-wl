@@ -150,14 +150,14 @@ public sealed partial class TTSSystem : EntitySystem
     //WL-Changes: Languages start
     private async void HandleLangSay(EntityUid uid, string message, string langMessage, string speaker)
     {
-        var fullSoundData = await GenerateTTS(message, speaker, true);
+        var fullSoundData = await GenerateTTS(message, speaker);
         if (fullSoundData is null) return;
 
-        var langSoundData = await GenerateTTS(langMessage, speaker, true);
+        var langSoundData = await GenerateTTS(langMessage, speaker);
         if (langSoundData is null) return;
 
-        var fullTtsEvent = new PlayTTSEvent(fullSoundData, GetNetEntity(uid), true);
-        var langTtsEvent = new PlayTTSEvent(langSoundData, GetNetEntity(uid), true);
+        var fullTtsEvent = new PlayTTSEvent(fullSoundData, GetNetEntity(uid));
+        var langTtsEvent = new PlayTTSEvent(langSoundData, GetNetEntity(uid));
 
         var xformQuery = GetEntityQuery<TransformComponent>();
         var sourcePos = _xforms.GetWorldPosition(xformQuery.GetComponent(uid), xformQuery);
