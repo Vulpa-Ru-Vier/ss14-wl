@@ -1,0 +1,41 @@
+- type: job
+  id: Adjutant
+  name: job-name-adjutant
+  description: job-description-adjutant
+  playTimeTracker: JobAdjutant
+  startingGear: ZookeeperGear
+  requirements:
+    - !type:AgeRequirement
+      minAge: 22
+  icon: "JobIconZookeeper"
+  supervisors: job-supervisors-hop
+  access:
+  - Service
+  - Maintenance
+  special:
+  - !type:GiveItemOnHolidaySpecial
+    holiday: MonkeyDay
+    prototype: MonkeyCubeBox
+
+- type: startingGear
+  id: ZookeeperGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSafari
+    head: ClothingHeadSafari
+    shoes: ClothingShoesColorWhite
+    id: ZookeeperPDA
+    ears: ClothingHeadsetService
+  #storage:
+    #back:
+    #- Stuff
+
+- type: chameleonOutfit
+  id: ZookeeperChameleonOutfit
+  job: Zookeeper
+  equipment:
+    eyes: ClothingEyesGlassesCheapSunglasses
+    mask: ClothingMaskBreath
+    outerClothing: ClothingOuterWinterColorLightBrown
+    neck: ClothingNeckScarfStripedBrown
+    belt: ClothingBeltStorageWaistbag
+    gloves: ClothingHandsGlovesColorBrown
