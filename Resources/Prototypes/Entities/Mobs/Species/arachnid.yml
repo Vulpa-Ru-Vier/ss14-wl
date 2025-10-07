@@ -117,6 +117,13 @@
   - type: Inventory
     templateId: arachnid
     speciesId: arachnid
+  #WL-Changes: Languages start
+  - type: Languages
+    speaking:
+      - Translate
+    understood:
+      - Translate
+  #WL-Changes: Languages end
 
 
 - type: entity
