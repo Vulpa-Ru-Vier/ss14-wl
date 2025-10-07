@@ -1,0 +1,12 @@
+- type: entity
+  name: adjutant's rubber stamp
+  parent: [RubberStampBase, BaseCommandContraband]
+  id: RubberStampAdjutant
+  categories: [ DoNotMap ]
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-adjutant
+    stampedColor: "#6ec0ea"
+    stampState: "paper_stamp-hop"
+  - type: Sprite
+    state: stamp-hop

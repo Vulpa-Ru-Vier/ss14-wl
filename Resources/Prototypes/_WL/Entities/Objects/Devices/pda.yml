@@ -1,0 +1,17 @@
+- type: entity
+  parent: BasePDA
+  id: AdjutantPDA
+  name: adjutant PDA
+  description: Looks handmaded
+  components:
+  - type: Pda
+    id: AdjutantIDCard
+  - type: Appearance
+    addeatenceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-adjutant
+  - type: PdaBorderColor
+    borderColor: "#ffe685"
+  - type: Icon
+    state: pda-aidec
