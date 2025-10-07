@@ -188,9 +188,9 @@
   obfuscation:
     !type:ByCharReplacementObfuscation
       replacement:
-      - 0
-      - 1
-      - 2
+      - "0 "
+      - "1 "
+      - "2 "
   icon:
     sprite: /Textures/_WL/Interface/Languages/languages.rsi
     state: android

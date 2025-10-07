@@ -182,19 +182,32 @@ public sealed class LanguagesSystem : SharedLanguagesSystem
         return wrappedMessage;
     }
 
-    public string GetRadioWrappedMessage(string message, EntityUid source, string name, SpeechVerbPrototype speech, RadioChannelPrototype channel)
+    public string GetRadioWrappedMessage(string message, EntityUid source, string name, SpeechVerbPrototype speech, RadioChannelPrototype channel, bool colorize = false)
     {
         var color = GetColor(source);
+        if (color == Color.White)
+            colorize = false;
 
-        var wrappedMessage = Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold-lang" : "chat-radio-message-wrap-lang",
+        var wrappedMessage = colorize ? Loc.GetString(
+                speech.Bold ? "chat-radio-message-wrap-bold-lang" : "chat-radio-message-wrap-lang",
             ("color", channel.Color),
             ("fontType", speech.FontId),
             ("fontSize", speech.FontSize),
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", name),
-            ("message", FormattedMessage.EscapeText(message)),
+            ("message", message),
             ("langColor", color)
+        ) :
+            Loc.GetString(
+                speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
+            ("color", channel.Color),
+            ("fontType", speech.FontId),
+            ("fontSize", speech.FontSize),
+            ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
+            ("channel", $"\\[{channel.LocalizedName}\\]"),
+            ("name", name),
+            ("message", message)
         );
         return wrappedMessage;
     }
@@ -211,9 +224,11 @@ public sealed class LanguagesSystem : SharedLanguagesSystem
         return color;
     }
 
-    public string GetWrappedMessage(string message, EntityUid source, string name, SpeechVerbPrototype? speech = null)
+    public string GetWrappedMessage(string message, EntityUid source, string name, SpeechVerbPrototype? speech = null, bool colorize = false)
     {
         var color = GetColor(source);
+        if (color == Color.White)
+            colorize = false;
         if (IsObfusEmoting(source))
         {
             var ent = Identity.Entity(source, EntityManager);
@@ -228,18 +243,25 @@ public sealed class LanguagesSystem : SharedLanguagesSystem
         {
             if (speech == null)
             {
-                var wrappedobfuscatedMessage = Loc.GetString("chat-manager-entity-whisper-wrap-message-lang",("entityName", name), ("message", FormattedMessage.EscapeText(message)), ("langColor", color));
+                var wrappedobfuscatedMessage = colorize ? Loc.GetString("chat-manager-entity-whisper-wrap-message-lang",("entityName", name), ("message", FormattedMessage.EscapeText(message)), ("langColor", color)) : Loc.GetString("chat-manager-entity-whisper-wrap-message", ("entityName", name), ("message", FormattedMessage.EscapeText(message)));
                 return wrappedobfuscatedMessage;
             }
             else
             {
-                var wrappedMessage = Loc.GetString(speech.Bold ? "chat-manager-entity-say-bold-wrap-message-lang" : "chat-manager-entity-say-wrap-message-lang",
+                var wrappedMessage = colorize ? Loc.GetString(speech.Bold ? "chat-manager-entity-say-bold-wrap-message-lang" : "chat-manager-entity-say-wrap-message-lang",
                         ("entityName", name),
                         ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
                         ("fontType", speech.FontId),
                         ("fontSize", speech.FontSize),
                         ("message", FormattedMessage.EscapeText(message)),
                         ("langColor", color)
+                ) :
+                    Loc.GetString(speech.Bold ? "chat-manager-entity-say-bold-wrap-message" : "chat-manager-entity-say-wrap-message",
+                        ("entityName", name),
+                        ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
+                        ("fontType", speech.FontId),
+                        ("fontSize", speech.FontSize),
+                        ("message", FormattedMessage.EscapeText(message))
                 );
                 return wrappedMessage;
             }
