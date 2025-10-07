@@ -100,7 +100,7 @@ public sealed class RadioSystem : EntitySystem
             : message;
 
         //WL-Changes: Languages start
-        var wrappedMessage = _languages.GetRadioWrappedMessage(content, messageSource, name, speech, channel);
+        var wrappedMessage = _languages.GetRadioWrappedMessage(content, messageSource, name, speech, channel, true);
         //WL-Changes: Languages end
 
         // most radios are relayed to chat, so lets parse the chat message beforehand
@@ -114,7 +114,7 @@ public sealed class RadioSystem : EntitySystem
         var ev = new RadioReceiveEvent(message, messageSource, channel, radioSource, chatMsg);
 
         //WL-Changes: Languages start
-        var obfusWrappedMessage = _languages.GetRadioObfusWrappedMessage(message, messageSource, name, speech, channel);
+        var obfusWrappedMessage = _languages.GetRadioObfusWrappedMessage(content, messageSource, name, speech, channel);
         var obfusChat = new ChatMessage(
             ChatChannel.Radio,
             message,

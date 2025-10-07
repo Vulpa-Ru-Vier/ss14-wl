@@ -453,7 +453,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         name = FormattedMessage.EscapeText(name);
 
         //WL-Changes: Languages start
-        var wrappedMessage = _languages.GetWrappedMessage(message, source, name, speech);
+        var wrappedMessage = _languages.GetWrappedMessage(message, source, name, speech, true);
         var obfusMessage = _languages.ObfuscateMessageFromSource(message, source);
         var obfusWrappedMessage = _languages.GetWrappedMessage(obfusMessage, source, name, speech);
 
