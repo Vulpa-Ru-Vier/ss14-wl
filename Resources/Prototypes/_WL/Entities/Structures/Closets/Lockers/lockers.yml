@@ -7,6 +7,6 @@
   - type: EntityStorageVisuals
     stateBaseClosed: aidec
     stateDoorOpen: aidec_open
-    stateDoorClose: aidec_door
+    stateDoorClosed: aidec_door
   - type: AccessReader
     access: [[ "Adjutant" ]]

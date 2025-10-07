@@ -29,9 +29,9 @@
   description: A fashionable trench coat made by the masters of their craft. It consists of excellent quality textiles, but even so, it is unlikely to protect you from anything.
   components:
   - type: Sprite
-    sprite: _WL/Clothing/OuterClothing/Coats/aidedcamp.rsi
+    sprite: _WL/Clothing/OuterClothing/Coats/aidedecamp.rsi
   - type: Clothing
-    sprite: _WL/Clothing/OuterClothing/Coats/aidedcamp.rsi
+    sprite: _WL/Clothing/OuterClothing/Coats/aidedecamp.rsi
   - type: StaticPrice
     price: 2500
   - type: Armor
