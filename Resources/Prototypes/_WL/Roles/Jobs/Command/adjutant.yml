@@ -28,12 +28,10 @@
 - type: startingGear
   id: AdjutantGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitAdjutant
-    head: ClothingHeadHatBeretAdjutant
+    eyes: ClothingEyesHudCommand
     shoes: ClothingShoesBootsLaceup
     id: AdjutantPDA
     ears: ClothingHeadsetAltCommand
-    back: ClothingBackpackAdjutant
   storage:
     back:
     - Flash

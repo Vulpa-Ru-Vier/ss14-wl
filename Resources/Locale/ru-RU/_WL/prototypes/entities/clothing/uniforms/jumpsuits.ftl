@@ -24,5 +24,5 @@ ent-ClothingUniformJumpsuitPostman = униформа почтальона
 ent-ClothingUniformJumpsuitAdjutant = комбинезон адъютанта
     .desc = Тёмно-синий комбинезон пошитый качественно, но без излишеств.
 
-ent-ClothingUniformJumpsuitAdjutantCC = комбинезон адъютанта
+ent-ClothingUniformJumpsuitAdjutantCC = комбинезон адъютанта центкома
     .desc = Тёмно-зелёный комбиeезон пошитый качественно и с золотой обшивкой.

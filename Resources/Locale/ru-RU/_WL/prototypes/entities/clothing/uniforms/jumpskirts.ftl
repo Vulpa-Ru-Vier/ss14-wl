@@ -12,5 +12,5 @@ ent-ClothingUniformJumpskirtGothic4 = { ent-ClothingUniformJumpskirtGothic0 }
 ent-ClothingUniformJumpskirtAdjutant = юбка-комбинезон адъютанта
     .desc = Тёмно-синяя юбка-комбинезон пошитый качественно, но без излишеств.
 
-ent-ClothingUniformJumpskirtAdjutantCC = юбка-комбинезон адъютанта
+ent-ClothingUniformJumpskirtAdjutantCC = юбка-комбинезон адъютанта центкома
     .desc = Тёмно-зелёная юбка-комбинезон пошитый качественно с золотистым обрамлением.

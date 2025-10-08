@@ -16,7 +16,7 @@
     appearanceDataInit:
      enum.PdaVisuals.PdaType:
        !type:String
-       pda-captain
+       pda-aidec
   - type: PdaBorderColor
     borderColor: "#7C5D00"
   - type: Icon
