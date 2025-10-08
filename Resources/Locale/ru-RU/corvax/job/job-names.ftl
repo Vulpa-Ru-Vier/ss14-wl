@@ -11,7 +11,7 @@ JobIAA = агент внутренних дел
 JobPilot = пилот
 JobSeniorEngineer = ведущий инженер
 # WL-Changes-start
-JobSeniorOfficer = заведующий лабораторией
+JobSeniorResearcher = заведующий лабораторией
 JobSeniorPhysician = дежурный врач
 # WL-Changes-start
-JobSeniorResearcher = инструктор СБ
+JobSeniorOfficer = инструктор СБ

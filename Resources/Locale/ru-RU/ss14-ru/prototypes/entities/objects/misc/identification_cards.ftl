@@ -120,12 +120,12 @@ ent-CluwneIDCard = ID-карта клувеня
     .desc = { ent-IDCardStandard.desc }
 ent-SeniorEngineerIDCard = ID-карта ведущего инженера
     .desc = { ent-EngineeringIDCard.desc }
-<#--WL-Changes: Roles rename start-->
+# WL-Changes: Roles rename start
 ent-SeniorResearcherIDCard = ID-карта заведующего лабораторией
     .desc = { ent-ResearchIDCard.desc }
 ent-SeniorPhysicianIDCard = ID-карта дежурного врача
     .desc = { ent-MedicalIDCard.desc }
-<#--WL-Changes: Roles rename end-->
+# WL-Changes: Roles rename end
 ent-SeniorOfficerIDCard = ID-карта инструктора СБ
     .desc = { ent-SecurityIDCard.desc }
 ent-WizardIDCard = ID-карта волшебника

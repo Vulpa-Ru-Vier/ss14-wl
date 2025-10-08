@@ -146,12 +146,12 @@ ent-CluwnePDA = КПК клувеня
     .suffix = Неснимаемый
 ent-SeniorEngineerPDA = КПК ведущего инженера
     .desc = Похоже, что его несколько раз разбирали и собирали.
-<#--WL-Changes: Roles rename start-->
+# WL-Changes: Roles rename start
 ent-SeniorResearcherPDA = КПК заведующего лабораторией
     .desc = Похоже, он пережил годы химических ожогов и взрывов.
 ent-SeniorPhysicianPDA = КПК дежурного врача
     .desc = Слабо пахнет железом и химикатами.
-<#--WL-Changes: Roles rename end-->
+# WL-Changes: Roles rename end
 ent-SeniorOfficerPDA = КПК инструктора СБ
     .desc = Побит, помят, поломан, практически не пригоден для использования.
 ent-PiratePDA = КПК пирата

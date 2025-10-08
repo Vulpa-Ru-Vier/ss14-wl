@@ -151,7 +151,7 @@ ent-ClothingUniformJumpsuitAtmos = комбинезон атмосферного
 ent-ClothingUniformJumpsuitAtmosCasual = повседневный комбинезон атмосферного техника
     .desc = С такой простой работой, как у вас, можно и расслабиться.
 # WL-change-psych-start
-ent-ClothingUniformJumpsuitPsychologist = костюм Психотерапевта
+ent-ClothingUniformJumpsuitPsychologist = костюм психотерапевта
     .desc = Я не теряю вещи. Я кладу вещи в места, которые потом ускользают от меня.
 # WL-change-psych-end
 ent-ClothingUniformJumpsuitReporter = костюм репортёра
@@ -201,12 +201,12 @@ ent-ClothingUniformJumpsuitFlannel = фланелевый комбинезон
     .desc = Пахнет так, будто кто-то жарил на гриле.
 ent-ClothingUniformJumpsuitSeniorEngineer = комбинезон ведущего инженера
     .desc = Признак мастерства и престижа инженерного отдела.
-<#--WL-Changes: Roles rename start-->
-ent-ClothingUniformJumpsuitSeniorResearcher = комбинезон заведющего лабораторией
+# WL-Changes: Roles rename start
+ent-ClothingUniformJumpsuitSeniorResearcher = комбинезон заведующего лабораторией
     .desc = Признак мастерства и престижа научного отдела.
 ent-ClothingUniformJumpsuitSeniorPhysician = комбинезон дежурного врача
     .desc = Признак мастерства и престижа медицинского отдела.
-<#--WL-Changes: Roles rename end-->
+# WL-Changes: Roles rename end
 ent-ClothingUniformJumpsuitSeniorOfficer = комбинезон инструктора службы безопасности
     .desc = Признак мастерства и престижа отдела службы безопасности.
 ent-ClothingUniformJumpsuitWeb = паутинный комбинезон
