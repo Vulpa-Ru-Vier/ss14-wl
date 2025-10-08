@@ -17,6 +17,12 @@ ent-ClothingUniformJumpsuitGothic6 = { ent-ClothingUniformJumpsuitGothic0 }
     .desc = { ent-ClothingUniformJumpsuitGothic0.desc }
 ent-ClothingUniformJumpsuitGothic7 = { ent-ClothingUniformJumpsuitGothic0 }
     .desc = { ent-ClothingUniformJumpsuitGothic0.desc }
-    
+
 ent-ClothingUniformJumpsuitPostman = униформа почтальона
     .desc = Доставим только в "ИДЕАЛЬНОМ" состоянии
+
+ent-ClothingUniformJumpsuitAdjutant = комбинезон адъютанта
+    .desc = Тёмно-синий комбинезон пошитый качественно, но без излишеств.
+
+ent-ClothingUniformJumpsuitAdjutantCC = комбинезон адъютанта
+    .desc = Тёмно-зелёный комбиeезон пошитый качественно и с золотой обшивкой.

@@ -6,7 +6,8 @@
   components:
   - type: Stamp
     stampedName: stamp-component-stamped-name-adjutant
-    stampedColor: "#6ec0ea"
-    stampState: "paper_stamp-hop"
+    stampedColor: "#345476"
+    stampState: "paper_stamp-adju"
   - type: Sprite
-    state: stamp-hop
+    sprite: _WL/Objects/Misc/stamps.rsi
+    state: stamp-adju

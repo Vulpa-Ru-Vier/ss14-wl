@@ -10,8 +10,8 @@
       inverted: true
       traits:
         - Muted
-  icon: "JobIconZookeeper"
-  weight: 20
+  icon: "JobIconAdjutant"
+  weight: -1000
   startingGear: AdjutantGear
   supervisors: job-supervisors-hop
   access:
@@ -33,6 +33,7 @@
     shoes: ClothingShoesBootsLaceup
     id: AdjutantPDA
     ears: ClothingHeadsetAltCommand
+    back: ClothingBackpackAdjutant
   storage:
     back:
     - Flash
@@ -41,9 +42,10 @@
   id: AdjutantChameleonOutfit
   job: Adjutant
   equipment:
-    eyes: ClothingEyesGlassesCheapSunglasses
+    eyes: ClothingEyesHudCommand
     mask: ClothingMaskBreath
     outerClothing: ClothingOuterWinterColorLightBrown
     neck: ClothingNeckScarfStripedBrown
     belt: ClothingBeltStorageWaistbag
     gloves: ClothingHandsGlovesColorBlack
+    back: ClothingBackpackAdjutant

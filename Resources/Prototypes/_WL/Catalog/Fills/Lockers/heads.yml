@@ -6,11 +6,13 @@
       - id: ClothingEyesHudCommand
       - id: ClothingUniformJumpsuitAdjutant
       - id: ClothingUniformJumpskirtAdjutant
-      - id: ClothingOuterCoatAdjutant
       - id: ClothingOuterWinterAdjutant
       - id: ClothingHeadHatBeretAdjutant
       - id: ClothingHeadHatAdjutantCap
       - id: RubberStampAdjutant
+      - id: ClothingBackpackAdjutant
+      - id: ClothingBackpackDuffelAdjutant
+      - id: ClothingBackpackSatchelAdjutant
 
 - type: entity
   id: LockerAdjutantFilled

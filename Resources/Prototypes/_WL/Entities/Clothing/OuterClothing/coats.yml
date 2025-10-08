@@ -24,8 +24,8 @@
 
 - type: entity
   parent: ClothingOuterStorageBase
-  id: ClothingOuterCoatAdjutant
-  name: adjutant's coat
+  id: ClothingOuterCoatAdjutantCC
+  name: centcom adjutant's coat
   description: A fashionable trench coat made by the masters of their craft. It consists of excellent quality textiles, but even so, it is unlikely to protect you from anything.
   components:
   - type: Sprite

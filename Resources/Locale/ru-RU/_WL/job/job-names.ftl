@@ -1,3 +1,3 @@
-job-name-adjutant = Адъютант
+job-name-adjutant = адъютант
 
-JobAdjutant = Адъютант
+JobAdjutant = адъютант
