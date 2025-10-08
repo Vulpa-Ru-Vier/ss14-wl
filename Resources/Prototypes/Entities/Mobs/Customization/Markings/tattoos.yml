@@ -133,7 +133,7 @@
     default:
       type:
         !type:EyeColoring
-        negative: true
+          negative: true
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_eye_l
