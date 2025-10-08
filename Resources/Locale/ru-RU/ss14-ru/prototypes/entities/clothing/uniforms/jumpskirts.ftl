@@ -128,7 +128,9 @@ ent-ClothingUniformJumpskirtOldDress = старое платье
     .desc = Очень старое поношенное платье.
 ent-ClothingUniformJumpskirtMusician = юбка музыканта
     .desc = Модная юбка для музыкально настроенных людей. Идеально подойдёт для любого выступления в стиле лаунж!
-ent-ClothingUniformJumpskirtPsychologist = юбка-комбинезон психолога
+# WL-change-psych-start
+ent-ClothingUniformJumpskirtPsychologist = юбка-комбинезон психотерапевта
     .desc = Я не теряю вещи. Я кладу вещи в места, которые потом ускользают от меня.
+# WL-change-psych-end
 ent-ClothingUniformJumpskirtClown = юбка клоуна
     .desc = ХОНК!

@@ -98,8 +98,10 @@ ent-SyndicateIDCard = ID-карта Синдиката
     .desc = { ent-IDCardStandard.desc }
 ent-PirateIDCard = ID-карта пирата
     .desc = { ent-IDCardStandard.desc }
-ent-PsychologistIDCard = ID-карта психолога
+# WL-change-psych-start
+ent-PsychologistIDCard = ID-карта психотерапевта
     .desc = { ent-IDCardStandard.desc }
+# WL-change-psych-end
 ent-ReporterIDCard = ID-карта репортёра
     .desc = { ent-IDCardStandard.desc }
 ent-BoxerIDCard = ID-карта боксёра
