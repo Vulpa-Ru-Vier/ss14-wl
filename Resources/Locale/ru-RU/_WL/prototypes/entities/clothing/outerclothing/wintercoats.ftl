@@ -1,2 +1,2 @@
-ent-ClothingOuterWinterAdjutant = зимняя адъютанта
+ent-ClothingOuterWinterAdjutant = зимняя куртка адъютанта
     .desc = { ent-ClothingOuterWinterCoatToggleable.desc }

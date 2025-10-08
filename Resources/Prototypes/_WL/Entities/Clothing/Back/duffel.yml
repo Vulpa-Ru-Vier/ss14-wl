@@ -10,7 +10,7 @@
 - type: entity
   parent: [ClothingBackpackDuffel, BaseCommandContraband]
   id: ClothingBackpackDuffelAdjutant
-  name: adjutant backpack
+  name: adjutant duffel backpack
   description: In this backpack, I want to say "Papers, please."
   components:
   - type: Sprite
