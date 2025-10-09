@@ -62,7 +62,7 @@
   id: SocksKneeAssblastusa
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Human, SlimePerson, Dwarf, Moth, Arachnid, Akula, Felinid, HumanoidKidanes Android, Murine]
+  speciesRestriction: [Human, SlimePerson, Dwarf, Moth, Arachnid, Akula, Felinid, HumanoidKidanes, Android, Murine]
   forcedColoring: true
   coloring:
     default:
