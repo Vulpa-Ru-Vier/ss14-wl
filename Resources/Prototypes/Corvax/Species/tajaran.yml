@@ -34,7 +34,7 @@
     RLeg: MobTajaranRLeg
     LFoot: MobTajaranLFoot
     RFoot: MobTajaranRFoot
-    # Foots: MobHumanoidAnyMarking # WL-Underwear
+    Foots: MobHumanoidAnyMarking # WL-Underwear
 
 - type: markingPoints
   id: MobTajaranMarkingLimits
