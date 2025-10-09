@@ -919,7 +919,7 @@
   components:
   - type: VendingMachine
     pack: NanoMedCivilianInventory
-    offState: off-civilian
+    offState: off
     brokenState: broken
     normalState: normal-unshaded
     ejectState: eject-unshaded
@@ -930,11 +930,11 @@
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/medical.rsi # WL-resprites await
+    sprite: _WL/Structures/Machines/VendingMachines/civil-medical.rsi # WL-resprites await
     layers:
-    - state: "off-civilian"
+    - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
-    - state: "off-civilian"
+    - state: "off"
       map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
       shader: unshaded
     - state: panel
@@ -956,6 +956,7 @@
     pack: NanoMedPlusInventory
     offState: off
   - type: Sprite
+    sprite: _WL/Structures/Machines/VendingMachines/medical.rsi # WL-resprites await
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
