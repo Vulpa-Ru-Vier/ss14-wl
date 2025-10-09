@@ -1502,6 +1502,7 @@
     accentVColor: "#DFDFDF"
   - type: Icon
     state: pda-seniorcourier
+    sprite: Objects/Devices/pda.rsi #WL resprite await
 
 - type: entity
   parent: [ BaseMajorContraband, SyndiPDA ]

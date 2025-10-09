@@ -6,7 +6,8 @@
   components:
   - type: Action
     checkCanInteract: false
-    icon: Objects/Fun/Instruments/microphone.rsi/icon.png
+    icon: Objects/Fun/Instruments/microphone.rsi
+    state: icon
   - type: InstantAction
     event: !type:OpenUiActionEvent
       key: enum.InstrumentUiKey.Key
