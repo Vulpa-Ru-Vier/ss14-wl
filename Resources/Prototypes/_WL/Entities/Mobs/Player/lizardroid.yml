@@ -1,0 +1,7 @@
+- type: entity
+  save: false
+  parent:
+  - BaseMobLizardroid
+  - BaseMob
+  id: MobLizardroid
+  name: Urist McLizardroid

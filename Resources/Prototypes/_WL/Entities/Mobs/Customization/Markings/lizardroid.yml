@@ -1,0 +1,267 @@
+- type: marking
+  id: LizardroidFrillsAquatic
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: frills_aquatic
+
+- type: marking
+  id: LizardroidFrillsShort
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: frills_short
+
+- type: marking
+  id: LizardroidFrillsSimple
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: frills_simple
+
+- type: marking
+  id: LizardroidFrillsDivinity
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: frills_divinity
+
+- type: marking
+  id: LizardroidFrillsBig
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: frills_big
+
+- type: marking
+  id: LizardroidFrillsAxolotl
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: frills_axolotl
+
+- type: marking
+  id: LizardroidFrillsHood
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: frills_hood_primary
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: frills_hood_secondary
+
+- type: marking
+  id: LizardroidFrillsNeckfull
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: frills_neckfull
+
+- type: marking
+  id: LizardroidHornsAngler
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: horns_angler
+
+- type: marking
+  id: LizardroidHornsCurled
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: horns_curled
+
+- type: marking
+  id: LizardroidHornsRam
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: horns_ram
+
+- type: marking
+  id: LizardroidHornsShort
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: horns_short
+
+- type: marking
+  id: LizardroidHornsSimple
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: horns_simple
+
+- type: marking
+  id: LizardroidHornsDouble
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: horns_double
+
+- type: marking
+  id: LizardroidTailSmooth
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: tail_smooth_primary
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: tail_smooth_secondary
+
+- type: marking
+  id: LizardroidSnoutRound
+  bodyPart: Snout
+  markingCategory: Snout
+  forcedColoring: true
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: snout_round
+
+- type: marking
+  id: LizardroidSnoutSharp
+  bodyPart: Snout
+  markingCategory: Snout
+  forcedColoring: true
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: snout_sharp
+
+- type: marking
+  id: LizardroidSnoutSplotch
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: snout_splotch_primary
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: snout_splotch_secondary
+
+- type: marking
+  id: LizardroidHornsArgali
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: horns_argali
+
+- type: marking
+  id: LizardroidHornsAyrshire
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: horns_ayrshire
+
+- type: marking
+  id: LizardroidHornsMyrsore
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: horns_myrsore
+
+- type: marking
+  id: LizardroidHornsBighorn
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: horns_bighorn
+
+- type: marking
+  id: LizardroidHornsDemonic
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: horns_demonic
+
+- type: marking
+  id: LizardroidHornsKoboldEars
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: horns_kobold_ears
+
+- type: marking
+  id: LizardroidHornsFloppyKoboldEars
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: horns_floppy_kobold_ears
+
+- type: marking
+  id: LizardroidChestUnderbelly
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: body_underbelly
+
+- type: marking
+  id: LizardroidSensors
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Lizardroid]
+  sprites:
+  - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+    state: sensors
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#159CFF"
+
+# Animated
+- type: marking
+  id: LizardroidTailSmoothAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+    - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+      state: tail_smooth_wagging_primary
+    - sprite: _WL/Mobs/Customization/lizardroid_parts.rsi
+      state: tail_smooth_wagging_secondary
