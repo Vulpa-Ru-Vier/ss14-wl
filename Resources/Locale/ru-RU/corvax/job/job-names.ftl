@@ -10,8 +10,8 @@ job-name-senior-officer = инструктор СБ
 JobIAA = агент внутренних дел
 JobPilot = пилот
 JobSeniorEngineer = ведущий инженер
-# WL-Changes-start
+# WL-Changes: Rename start
 JobSeniorResearcher = заведующий лабораторией
 JobSeniorPhysician = дежурный врач
-# WL-Changes-start
+# WL-Changes: Rename end
 JobSeniorOfficer = инструктор СБ
