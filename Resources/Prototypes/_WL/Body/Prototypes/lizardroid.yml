@@ -1,0 +1,49 @@
+- type: body
+  id: Lizardroid
+  name: "lizardroid"
+  root: torso
+  slots:
+    head:
+      part: HeadLizardroid
+      connections:
+      - torso
+      organs:
+        brain: OrganAndroidBrain
+        eyes: OrganAndroidEyes
+    torso:
+      part: TorsoLizardroid
+      connections:
+      - left arm
+      - right arm
+      - left leg
+      - right leg
+      organs:
+        heart: OrganAndroidHeart
+        lungs: OrganAndroidLungs
+        stomach: OrganAndroidStomach
+        liver: OrganAndroidLiver
+        kidneys: OrganAndroidKidneys
+    right arm:
+      part: RightArmLizardroid
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmLizardroid
+      connections:
+      - left hand
+    right hand:
+      part: RightHandLizardroid
+    left hand:
+      part: LeftHandLizardroid
+    right leg:
+      part: RightLegLizardroid
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegLizardroid
+      connections:
+      - left foot
+    right foot:
+      part: RightFootLizardroid
+    left foot:
+      part: LeftFootLizardroid
