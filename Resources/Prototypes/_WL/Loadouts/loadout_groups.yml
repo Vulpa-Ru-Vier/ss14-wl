@@ -20,3 +20,36 @@
   maxLimit: 1
   loadouts:
   - SeniorEngineerBeret
+
+# Command
+- type: loadoutGroup
+  id: AdjutantHead
+  name: loadout-group-adjutant-head
+  minLimit: 0
+  loadouts:
+  - AdjutantHead
+  - AdjutantCap
+
+- type: loadoutGroup
+  id: AdjutantJumpsuit
+  name: loadout-group-adjutant-jumpsuit
+  maxLimit: 1
+  loadouts:
+  - AdjutantJumpsuit
+  - AdjutantJumpskirt
+
+- type: loadoutGroup
+  id: AdjutantBackpack
+  name: loadout-group-adjutant-backpack
+  maxLimit: 1
+  loadouts:
+  - AdjutantBackpack
+  - AdjutantSatchel
+  - AdjutantDuffel
+
+- type: loadoutGroup
+  id: AdjutantOuterClothing
+  name: loadout-group-adjutant-outerclothing
+  minLimit: 0
+  loadouts:
+  - AdjutantWintercoat

@@ -1,0 +1,11 @@
+- type: roleLoadout
+  id: JobAdjutant
+  groups:
+  - Inventory # Corvax-Loadouts
+  - AdjutantHead
+  - AdjutantJumpsuit
+  - AdjutantBackpack
+  - AdjutantOuterClothing
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool

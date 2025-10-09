@@ -15,41 +15,52 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'MFV' # mofkkol + Vissent = MFV
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency.yml
+          emergencyShuttlePath: /Maps/_WL/Shuttles/emergency_nanostation.yml
         - type: StationJobs
-          availableJobs: # Total jobs on the station: 55
-            # command: 2
+          availableJobs:
+
+            # command
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ]
-            # cargo: 5
+
+            # cargo
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 2, 2 ]
             CargoTechnician: [ 2, 2 ]
-            # engineering: 6
+
+            # engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 1, 1 ]
+            SeniorEngineer: [ 1, 1 ]
             StationEngineer: [ 2, 2 ]
             TechnicalAssistant: [ 2, 2 ]
-            # medical: 9
+
+            # medical
             ChiefMedicalOfficer: [ 1, 1 ]
+            SeniorPhysician: [ 1, 1 ]
             MedicalDoctor: [ 2, 2 ]
             MedicalIntern: [ 2, 2 ]
             Paramedic: [ 1, 1 ]
             Chemist: [ 2, 2 ]
             Psychologist: [ 1, 1 ]
-            # science: 6
+
+            # science
             ResearchDirector: [ 1, 1 ]
+            SeniorResearcher: [ 1, 1 ]
             Scientist: [ 3, 3 ]
             ResearchAssistant: [ 2, 2 ]
-            # security: 9
+
+            # security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
+            SeniorOfficer: [ 1, 1 ]
             SecurityOfficer: [ 2, 2 ]
             SecurityCadet: [ 2, 2 ]
             Detective: [ 1, 1 ]
             Pilot: [ 1, 1 ]
             Brigmedic: [1, 1 ]
-            # service: 16
+
+            # service
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 1 ]
             Botanist: [ 2, 2 ]
@@ -65,6 +76,9 @@
             Zookeeper: [ 1, 1 ]
             Boxer: [ 1, 1 ]
             Passenger: [ -1, -1 ]
-            # silicon: 2
+
+            # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 1, 1 ]
+
+
