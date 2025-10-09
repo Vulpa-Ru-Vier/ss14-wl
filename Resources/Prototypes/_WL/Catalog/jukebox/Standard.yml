@@ -1,4 +1,10 @@
 - type: jukebox
+  id: lysoxygen
+  name: mrjajkes - Lysoxygen
+  path:
+    path: /Audio/_WL/Jukebox/Lysoxygen.ogg
+
+- type: jukebox
   id: motive
   name: A-Guy - Motive
   path:
