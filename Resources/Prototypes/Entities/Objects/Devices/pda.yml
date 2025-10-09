@@ -1108,7 +1108,7 @@
        pda-syndi-operative
   - type: Icon
     sprite: Objects/Devices/pda.rsi #WL resprite await
-    state: pda-syndi-operative
+    state: pda-syndi #WL resprite await
 
 - type: entity
   parent: [ SyndiOperativePDA, BaseSyndicateContraband ]
