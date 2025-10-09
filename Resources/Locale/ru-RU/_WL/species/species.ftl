@@ -2,6 +2,7 @@
 
 species-name-akula = Саренг
 species-name-android = Андроид
+species-name-lizardroid = Ухдроид
 species-name-cischi = Цисчи
 species-name-felinid = Фелинид
 species-name-golem = Голем

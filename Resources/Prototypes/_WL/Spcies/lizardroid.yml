@@ -1,6 +1,6 @@
 - type: species
   id: Lizardroid
-  name: species-name-android
+  name: species-name-lizardroid
   roundStart: true
   prototype: MobLizardroid
   sprites: MobLizardroidSprites
@@ -43,11 +43,11 @@
     Tail:
       points: 1
       required: true
-      defaultMarkings: [ LizardTailSmooth ]
+      defaultMarkings: [ LizardroidTailSmooth ]
     Snout:
       points: 1
       required: true
-      defaultMarkings: [ LizardSnoutRound ]
+      defaultMarkings: [ LizardroidSnoutRound ]
     HeadTop:
       points: 2
       required: false
@@ -75,7 +75,7 @@
     Overlay:
       points: 1
       required: true
-      defaultMarkings: [ AndroidSensors ]
+      defaultMarkings: [ LizardroidSensors ]
 
 - type: humanoidBaseSprite
   id: MobLizardroidHeadMale

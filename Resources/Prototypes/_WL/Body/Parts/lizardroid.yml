@@ -11,7 +11,7 @@
             Quantity: 10
     - type: Tag
       tags:
-      - LizardroidBodyTag
+      - AndroidBodyTag
 
 - type: entity
   id: TorsoLizardroid

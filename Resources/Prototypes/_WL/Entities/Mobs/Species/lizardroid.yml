@@ -66,27 +66,6 @@
     maxBleedAmount: 1.0
     bloodRefreshAmount: 0.0
     bleedReductionAmount: 0.0
-  - type: Reactive
-    groups:
-      Flammable: [ Touch ]
-      Extinguish: [ Touch ]
-      Acidic: [Touch, Ingestion]
-    reactions:
-    - reagents: [ Water, SpaceCleaner ]
-      methods: [ Touch ]
-      effects:
-      - !type:WashCreamPieReaction
-    - reagents: [ Water ]
-      methods: [Touch, Ingestion, Injection]
-      effects:
-      - !type:Electrocute
-        probability: 0.05
-        electrocuteDamageScale: 1
-      - !type:PopupMessage
-        type: Local
-        visualType: LargeCaution
-        messages: [ "android-hurt-water-popup" ]
-        probability: 0.25
   - type: StatusEffects
     allowed:
       - Stun
@@ -110,8 +89,8 @@
   - type: Sprite
     sprite: _WL/Mobs/Species/Lizardroid/parts.rsi
   - type: Temperature
-    heatDamageThreshold: 460
-    coldDamageThreshold: 270.3 #293.3 предел
+    heatDamageThreshold: 400
+    coldDamageThreshold: 285 #293.3 предел
     currentTemperature: 310.15
     specificHeat: 42 #42
     coldDamage:
@@ -119,7 +98,7 @@
         Cold: 0.2 #per second, scales with temperature & other constants
     heatDamage:
       types:
-        Heat: 0.1 #per second, scales with temperature & other constants
+        Heat: 0.5 #per second, scales with temperature & other constants
   - type: ThermalRegulator
     metabolismHeat: 800
     radiatedHeat: 100
@@ -129,7 +108,7 @@
     normalBodyTemperature: 310.15
     thermalRegulationTemperatureThreshold: 25
   - type: HumanoidAppearance
-    species: Reptilian
+    species: Lizardroid
     hideLayersOnEquip:
     - Snout
     - HeadTop
@@ -271,7 +250,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: HumanoidAppearance
-    species: Reptilian
+    species: Lizardroid
     hideLayersOnEquip:
     - Snout
     - HeadTop

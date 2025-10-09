@@ -30,3 +30,36 @@ ent-LeftFootAndroid = левая стопа андроида
 
 ent-RightFootAndroid = правая стопа андроида
     .desc = { ent-PartAndroid.desc }
+
+ent-PartLizardroid = часть тела андроида-унатха
+    .desc = { ent-BasePart.desc }
+
+ent-TorsoLizardroid = туловище андроида-унатха
+    .desc = { ent-PartAndroid.desc }
+
+ent-HeadLizardroid = голова андроида-унатха
+    .desc = { ent-PartAndroid.desc }
+
+ent-LeftArmLizardroid = левая рука андроида-унатха
+    .desc = { ent-PartAndroid.desc }
+
+ent-RightArmLizardroid = правая рука андроида-унатха
+    .desc = { ent-PartAndroid.desc }
+
+ent-LeftHandLizardroid = левая ладонь андроида-унатха
+    .desc = { ent-PartAndroid.desc }
+
+ent-RightHandLizardroid = правая ладонь андроида-унатха
+    .desc = { ent-PartAndroid.desc }
+
+ent-LeftLegLizardroid = левая нога андроида-унатха
+    .desc = { ent-PartAndroid.desc }
+
+ent-RightLegLizardroid = правая нога андроида-унатха
+    .desc = { ent-PartAndroid.desc }
+
+ent-LeftFootLizardroid = левая стопа андроида-унатха
+    .desc = { ent-PartAndroid.desc }
+
+ent-RightFootLizardroid = правая стопа андроида-унатха
+    .desc = { ent-PartAndroid.desc }

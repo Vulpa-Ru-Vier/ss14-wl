@@ -241,7 +241,7 @@
     state: body_underbelly
 
 - type: marking
-  id: LizardroidroidSensors
+  id: LizardroidSensors
   bodyPart: LLeg
   markingCategory: Overlay
   speciesRestriction: [Lizardroid]
