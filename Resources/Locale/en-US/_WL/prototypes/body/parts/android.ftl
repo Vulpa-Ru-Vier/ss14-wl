@@ -31,35 +31,35 @@ ent-LeftFootAndroid = left android foot
 ent-RightFootAndroid = right android foot
   .desc = { ent-PartAndroid.desc }
 
-ent-PartAndroid = android-reptilian body part
+ent-PartLizardroid = android-reptilian body part
     .desc = { ent-BasePart.desc }
 
-ent-TorsoAndroid = android-reptilian body
+ent-TorsoLizardroid = Lizardroid-reptilian body
   .desc = { ent-PartAndroid.desc }
 
-ent-HeadAndroid = android-reptilian head
+ent-HeadLizardroid = Lizardroid-reptilian head
   .desc = { ent-PartAndroid.desc }
 
-ent-LeftArmAndroid = left android-reptilian arm
+ent-LeftArmLizardroid = left android-reptilian arm
   .desc = { ent-PartAndroid.desc }
 
-ent-RightArmAndroid = right android-reptilian arm
+ent-RightArmLizardroid = right android-reptilian arm
   .desc = { ent-PartAndroid.desc }
 
-ent-LeftHandAndroid = left android-reptilian hand
+ent-LeftHandLizardroid = left android-reptilian hand
   .desc = { ent-PartAndroid.desc }
 
-ent-RightHandAndroid = right android-reptilian hand
+ent-RightHandLizardroid = right android-reptilian hand
   .desc = { ent-PartAndroid.desc }
 
-ent-LeftLegAndroid = left android-reptilian foot
+ent-LeftLegLizardroid = left android-reptilian foot
   .desc = { ent-PartAndroid.desc }
 
-ent-RightLegAndroid = right android-reptilian leg
+ent-RightLegLizardroid = right android-reptilian leg
   .desc = { ent-PartAndroid.desc }
 
-ent-LeftFootAndroid = left android-reptilian foot
+ent-LeftFootLizardroid = left android-reptilian foot
   .desc = { ent-PartAndroid.desc }
 
-ent-RightFootAndroid = right android-reptilian foot
+ent-RightFootLizardroid = right android-reptilian foot
   .desc = { ent-PartAndroid.desc }
