@@ -26,14 +26,14 @@
     HeadSide: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
     Eyes: MobHumanoidEyes
-    LArm: MobVulpkaninLArm
-    RArm: MobVulpkaninRArm
-    LHand: MobVulpkaninLHand
-    RHand: MobVulpkaninRHand
-    LLeg: MobVulpkaninLLeg
-    RLeg: MobVulpkaninRLeg
-    LFoot: MobVulpkaninLFoot
-    RFoot: MobVulpkaninRFoot
+    LArm: MobCorvaxVulpkaninLArm
+    RArm: MobCorvaxVulpkaninRArm
+    LHand: MobCorvaxVulpkaninLHand
+    RHand: MobCorvaxVulpkaninRHand
+    LLeg: MobCorvaxVulpkaninLLeg
+    RLeg: MobCorvaxVulpkaninRLeg
+    LFoot: MobCorvaxVulpkaninLFoot
+    RFoot: MobCorvaxVulpkaninRFoot
     Foots: MobHumanoidAnyMarking # WL-Underwear
 
 - type: markingPoints
