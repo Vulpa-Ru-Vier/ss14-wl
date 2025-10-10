@@ -45,6 +45,6 @@
     neck: ClothingNeckBtTiePink
 
 - type: loadout
-  id: BtTieRainbow
+  id: BtTieFriendship
   equipment:
-    neck: ClothingNeckBtTieRainbow
+    neck: ClothingNeckBtTieFriendship
