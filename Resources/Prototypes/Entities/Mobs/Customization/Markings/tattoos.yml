@@ -170,7 +170,7 @@
   id: TattooEyeVulpkaninRight
   bodyPart: Eyes
   markingCategory: [Head]
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: [CorvaxVulpkanin]
   coloring:
     default:
       type:
@@ -184,7 +184,7 @@
   id: TattooEyeVulpkaninLeft
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: [CorvaxVulpkanin]
   coloring:
     default:
       type:

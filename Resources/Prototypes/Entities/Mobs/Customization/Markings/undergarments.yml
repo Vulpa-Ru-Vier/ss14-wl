@@ -1,5 +1,5 @@
 # These options are kept very sparse to not put emphasis on nudity, and to provide a base for players to feel comfortable with.
-# It's unlikely more will be added to upstream for cosmetic reasons. 
+# It's unlikely more will be added to upstream for cosmetic reasons.
 
 - type: marking
   id: UndergarmentBottomBoxers
@@ -226,7 +226,7 @@
   id: UndergarmentBottomBoxersVulpkanin
   bodyPart: UndergarmentBottom
   markingCategory: UndergarmentBottom
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: [CorvaxVulpkanin]
   coloring:
     default:
       type: null
@@ -239,7 +239,7 @@
   id: UndergarmentBottomBriefsVulpkanin
   bodyPart: UndergarmentBottom
   markingCategory: UndergarmentBottom
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: [CorvaxVulpkanin]
   coloring:
     default:
       type: null
@@ -252,7 +252,7 @@
   id: UndergarmentBottomSatinVulpkanin
   bodyPart: UndergarmentBottom
   markingCategory: UndergarmentBottom
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: [CorvaxVulpkanin]
   coloring:
     default:
       type: null
@@ -265,7 +265,7 @@
   id: UndergarmentTopBraVulpkanin
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: [CorvaxVulpkanin]
   coloring:
     default:
       type: null
@@ -278,7 +278,7 @@
   id: UndergarmentTopSportsbraVulpkanin
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: [CorvaxVulpkanin]
   coloring:
     default:
       type: null
@@ -291,7 +291,7 @@
   id: UndergarmentTopBinderVulpkanin
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: [CorvaxVulpkanin]
   coloring:
     default:
       type: null
@@ -304,7 +304,7 @@
   id: UndergarmentTopTanktopVulpkanin
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
-  speciesRestriction: [Vulpkanin]
+  speciesRestriction: [CorvaxVulpkanin]
   coloring:
     default:
       type: null
@@ -312,4 +312,4 @@
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
     state: tanktop_vulpkanin
-    
+
