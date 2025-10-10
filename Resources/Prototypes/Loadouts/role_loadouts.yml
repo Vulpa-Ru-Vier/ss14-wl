@@ -47,8 +47,8 @@
   - PassengerJumpsuit
   - CommonBackpack
   - PassengerNeck
-  - PassengerFace
-  - PassengerGloves
+  # - PassengerFace # WL-Changes: Antitide
+  # - PassengerGloves # WL-Changes: Antitide
   - PassengerOuterClothing
   - PassengerShoes
   - Glasses
