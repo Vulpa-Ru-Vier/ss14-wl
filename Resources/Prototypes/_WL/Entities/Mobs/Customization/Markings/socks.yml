@@ -17,7 +17,7 @@
   id: SocksKneeAceReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -47,7 +47,7 @@
   id: SocksThighAceReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -77,7 +77,7 @@
   id: SocksKneeAssblastusaReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -107,7 +107,7 @@
   id: SocksThighAssblastusaReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -137,7 +137,7 @@
   id: SocksKneeBeeReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -167,7 +167,7 @@
   id: SocksThighBeeReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -197,7 +197,7 @@
   id: SocksKneeCommieReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -227,7 +227,7 @@
   id: SocksThighCommieReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -258,7 +258,7 @@
   id: SocksFullFishnetReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -288,7 +288,7 @@
   id: SocksKneeFishnetReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -318,7 +318,7 @@
   id: SocksThighFishnetReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -348,7 +348,7 @@
   id: SocksPantyhoseReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -378,7 +378,7 @@
   id: SocksKneeRainbowReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -408,7 +408,7 @@
   id: SocksThighRainbowReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -439,7 +439,7 @@
   id: SocksKneeStripedReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   coloring:
     default:
       type:
@@ -471,7 +471,7 @@
   id: SocksThighStripedReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   coloring:
     default:
       type:
@@ -502,7 +502,7 @@
   id: SocksKneeThinReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -532,7 +532,7 @@
   id: SocksThighThinReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -561,7 +561,7 @@
   id: SocksThocksReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   coloring:
     default:
       type:
@@ -590,7 +590,7 @@
   id: SocksKneeTransReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -620,7 +620,7 @@
   id: SocksThighTransReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -650,7 +650,7 @@
   id: SocksKneeUKReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -680,7 +680,7 @@
   id: SocksThighUKReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   forcedColoring: true
   coloring:
     default:
@@ -709,7 +709,7 @@
   id: SocksKneeWhiteReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   coloring:
     default:
       type:
@@ -737,7 +737,7 @@
   id: SocksNormWhiteReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   coloring:
     default:
       type:
@@ -765,7 +765,7 @@
   id: SocksShortWhiteReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   coloring:
     default:
       type:
@@ -793,7 +793,7 @@
   id: SocksThighWhiteReptilian
   bodyPart: Foots
   markingCategory: Socks
-  speciesRestriction: [Reptilian, Tajaran, Vulpkanin]
+  speciesRestriction: [Reptilian, Tajaran, CorvaxVulpkanin]
   coloring:
     default:
       type:
